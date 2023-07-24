@@ -1,9 +1,9 @@
 <?php
 
-namespace BoardRoom\Core\Mantle;
+namespace Chungu\Core\Mantle;
 
-use BoardRoom\Models\Employee; 
-use BoardRoom\Core\Mantle\Session;
+use Chungu\Models\Employee; 
+use Chungu\Core\Mantle\Session;
 
 class Auth {
 

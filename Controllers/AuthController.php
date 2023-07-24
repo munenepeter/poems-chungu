@@ -1,10 +1,10 @@
 <?php
 
-namespace BoardRoom\Controllers;
+namespace Chungu\Controllers;
 
-use BoardRoom\Core\Mantle\Auth;
-use BoardRoom\Core\Mantle\Request;
-use BoardRoom\Core\Mantle\Session;
+use Chungu\Core\Mantle\Auth;
+use Chungu\Core\Mantle\Request;
+use Chungu\Core\Mantle\Session;
 
 class AuthController extends Controller
 {

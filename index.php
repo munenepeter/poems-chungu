@@ -1,7 +1,7 @@
 <?php
 
-use BoardRoom\Core\Mantle\Router;
-use BoardRoom\Core\Mantle\Request;
+use Chungu\Core\Mantle\Router;
+use Chungu\Core\Mantle\Request;
 
 //require the main file joining all the parts of the app
 require 'Core/bootstrap.php';

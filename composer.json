@@ -1,6 +1,6 @@
 {
-    "name": "boardroom/boardroom",
-    "description": "A simple scheduling app for the boardroom",
+    "name": "poemschungu/poemschungu",
+    "description": "A simple app for chungu poems",
     "authors": [
         {
             "name": "munenepeter",
@@ -10,7 +10,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "BoardRoom\\": "./"
+            "Chungu\\": "./"
         }
     }
 }

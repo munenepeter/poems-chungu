@@ -46,7 +46,7 @@
         <div class="container mx-auto px-1">
             <?php
 
-            $calendar = new \BoardRoom\Core\Calendar($date->format("Y-m-d"));
+            $calendar = new \Chungu\Core\Calendar($date->format("Y-m-d"));
 
             foreach ($meetings as $meeting) {
                 $txt = "<p class=\"text-sm font-bold\">{$meeting->name}  .  <span class=\"text-xs\">" . get_time($meeting->meeting_date)."</span></p>";

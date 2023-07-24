@@ -8,11 +8,11 @@
  * 
  */
 
-namespace BoardRoom\Controllers;
+namespace Chungu\Controllers;
 
-use BoardRoom\Core\Mantle\Middleware;
-use BoardRoom\Core\Mantle\Request;
-use BoardRoom\Core\Mantle\Paginator;
+use Chungu\Core\Mantle\Middleware;
+use Chungu\Core\Mantle\Request;
+use Chungu\Core\Mantle\Paginator;
 
 class Controller {
 

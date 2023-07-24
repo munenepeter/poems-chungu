@@ -1,8 +1,8 @@
 <?php
 
-namespace BoardRoom\Controllers;
+namespace Chungu\Controllers;
 
-use BoardRoom\Models\Meeting;
+use Chungu\Models\Meeting;
 
 /**
  * Api controller

@@ -14,7 +14,7 @@ return [
   ],
   //when using SQLITE
   'sqlite' => [
-    'path' => 'Core/Database/sqlite/db.sqlite'
+    'path' => 'Core/Database/sqlite/poems-chungu.sqlite'
   ],
   'codes' => [
     403 => ['403 Forbidden', 'The server refused to fulfill the request.'],

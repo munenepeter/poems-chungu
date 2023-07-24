@@ -1,6 +1,6 @@
 <?php
 
-namespace BoardRoom\Core\Database;
+namespace Chungu\Core\Database;
 
 class Connection {
     //make a connection to the DB

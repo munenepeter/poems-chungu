@@ -1,8 +1,8 @@
 <?php
 
-namespace BoardRoom\Core\Mantle;
+namespace Chungu\Core\Mantle;
 
-use BoardRoom\Core\Mantle\Request;
+use Chungu\Core\Mantle\Request;
 
 class Logger {
 

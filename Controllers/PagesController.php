@@ -1,7 +1,7 @@
 <?php
 
-namespace BoardRoom\Controllers;
-use BoardRoom\Models\Meeting;
+namespace Chungu\Controllers;
+use Chungu\Models\Meeting;
 
 class PagesController extends Controller {
 

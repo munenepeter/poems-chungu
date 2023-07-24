@@ -1,6 +1,6 @@
 <?php
 
-namespace BoardRoom\Core\Mantle;
+namespace Chungu\Core\Mantle;
 
 class App{
   public static $registry = [];

@@ -1,8 +1,8 @@
 <?php
 
-namespace BoardRoom\Models;
+namespace Chungu\Models;
 
-use BoardRoom\Core\Mantle\App;
+use Chungu\Core\Mantle\App;
 
 class Model {
     public function __get($name) {
@@ -75,7 +75,7 @@ class Model {
      * @example 
      * Model::where(['id', 'name','slug'], ['id', 90]);
      * 
-     * @return \BoardRoom\Models\Model;
+     * @return \Chungu\Models\Model;
      */
     public static function where($columns, $condition) {
         //Returns all the records in the db for a certain  model/table
@@ -108,7 +108,7 @@ class Model {
      * </code>
      * 
      * 
-     * @return \BoardRoom\Models\Model;
+     * @return \Chungu\Models\Model;
      */
     public static function find($id) {
 

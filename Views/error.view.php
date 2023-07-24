@@ -1,6 +1,6 @@
 <?php
 
-use BoardRoom\Core\Mantle\App; ?>
+use Chungu\Core\Mantle\App; ?>
 
 <!DOCTYPE html>
 <html lang="en">

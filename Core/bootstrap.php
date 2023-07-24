@@ -1,8 +1,8 @@
 <?php
 
-use BoardRoom\Core\Mantle\App;
-use BoardRoom\Core\Database\Connection;
-use BoardRoom\Core\Database\QueryBuilder; 
+use Chungu\Core\Mantle\App;
+use Chungu\Core\Database\Connection;
+use Chungu\Core\Database\QueryBuilder; 
 
 //change TimeZone
 date_default_timezone_set('Africa/Nairobi'); 

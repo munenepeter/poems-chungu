@@ -1,6 +1,6 @@
 <?php
 
-namespace BoardRoom\Controllers;
+namespace Chungu\Controllers;
 
 class SystemController extends Controller
 {

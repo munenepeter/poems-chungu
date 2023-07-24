@@ -1,13 +1,13 @@
 <?php
 
-namespace BoardRoom\Core\Database;
+namespace Chungu\Core\Database;
 
 
 /**
  * @package QueryBuilder
  * 
  * Class that interacts with the db
- * @return \BoardRoom\Models\Model Model returns an instance of Model class
+ * @return \Chungu\Models\Model Model returns an instance of Model class
  * 
  * @todo Implement App::get('database')->select('users')->where(['email', $email]);
  * 
@@ -38,7 +38,7 @@ class QueryBuilder {
     }
 
 
-    $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "BoardRoom\\Models\\{$model}");
+    $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
 
     if (is_null($results) || empty($results)) {
       if (str_contains($sql, "update") || str_contains($sql, "delete")) {
@@ -56,7 +56,7 @@ class QueryBuilder {
    * This selects everything from a given table
    * @param string $table table from which to selct the data
    * 
-   * @return \BoardRoom\Models\Model returns an instance of Model with the same table name
+   * @return \Chungu\Models\Model returns an instance of Model with the same table name
    */
   public function selectAll(string $table) {
 
@@ -71,7 +71,7 @@ class QueryBuilder {
    * @param string $table Table from which to select
    * @param array $values The columns in the db to select from
    * 
-   * @return \BoardRoom\Models\Model returns an instance of Model with the same table name
+   * @return \Chungu\Models\Model returns an instance of Model with the same table name
    */
   public function select(string $table, array $values) {
 

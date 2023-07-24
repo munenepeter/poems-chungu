@@ -1,12 +1,12 @@
 <?php
 
 
-use BoardRoom\Core\Mantle\App;
-use BoardRoom\Core\Mantle\Auth;
-use BoardRoom\Core\Mantle\Logger;
-use BoardRoom\Core\Mantle\Request;
-use BoardRoom\Core\Mantle\Session;
-use BoardRoom\Core\Calendar;
+use Chungu\Core\Mantle\App;
+use Chungu\Core\Mantle\Auth;
+use Chungu\Core\Mantle\Logger;
+use Chungu\Core\Mantle\Request;
+use Chungu\Core\Mantle\Session;
+use Chungu\Core\Calendar;
 
 define("BASE_URL",  sprintf(
     "%s://%s",

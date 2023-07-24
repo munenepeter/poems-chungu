@@ -1,6 +1,6 @@
 <?php
 
-namespace BoardRoom\Core\Mantle;
+namespace Chungu\Core\Mantle;
 
 
 class Router {
@@ -83,7 +83,7 @@ class Router {
     }
     protected function callAction($params, $controller, $action) {
 
-        $controller = "BoardRoom\\Controllers\\{$controller}";
+        $controller = "Chungu\\Controllers\\{$controller}";
 
         if (!class_exists($controller)) {
             logger("Debug", "Router: Class $controller doesn't not exist!");
