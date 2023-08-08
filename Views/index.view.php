@@ -10,8 +10,7 @@
 
         <div class="px-2 sm:w-1/2 md:w-3/4">
 
-            <p class='text-gray-400'>SUBSCRIBE TO OUR NEWSLETTER The latest news, article, resources, sent to your inbox
-                weekly</p>
+            <p class='text-gray-400'>Sign up tp get new poetry playlist in your inbox every week.</p>
 
             <div class='flex xsm:flex-row md:p-0'>
                 <input
