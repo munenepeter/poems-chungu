@@ -15,9 +15,9 @@
 
                 <div class='flex sm:flex-row md:p-0'>
                     <input
-                        class='px-4 md:px-8 py-2 md:py-3 md:text-lg transition-all duration-300 focus:outline-none focus:right-1 '
+                        class='px-2 md:px-8 py-2 md:py-3 md:text-lg transition-all duration-300 focus:outline-none focus:right-1 '
                         placeholder='Enter your email' type="text" />
-                    <button class='ml-1 px-4 md:px-6 py-2 md:py-3 font-semibold bg-amber-500'>Subscribe</button>
+                    <button class='ml-1 px-2 md:px-6 py-2 md:py-3 font-semibold bg-amber-500'>Subscribe</button>
                 </div>
             </div>
         </div>
@@ -25,28 +25,27 @@
 </section>
 
 
-<div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
+<section class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <div class="md:grid md:grid-cols-6 md:gap-4 gap-2 mx-auto">
-        <h1 class="mb-2">Latest</h1>
-        <div class="md:-ml-32 font-medium md:col-span-3 p-2">
+        <h1 class="mb-2 uppercase text-orange-550">Latest</h1>
+        <div class="md:-ml-32 font-medium md:col-span-3 p-2 mb-2">
 
-            <article
-                class="w-full max-w-2xl">
-                <h1
-                    class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl ">
-                    Love is hate and death</h1>
+            <article class="w-full max-w-2xl">
+                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl ">L.O.V.E</h1>
 
                 <a href="#" rel="author" class="text-xl font-bold text-gray-900 italic">By munenepeter</a>
-
-
-                <p class="md:mt-4 mt-2 lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo odio et assumenda
-                    sunt perspiciatis corrupti voluptas cum, quisquam quos explicabo.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aliquid consequuntur et enim
-                    corrupti totam?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero rem non dolor, repellat optio, omnis
-                    qui corrupti voluptas aliquid natus dolorem ipsa quis veniam in cumque facilis animi. Et minus
-                    consequatur quisquam dolorem qui, incidunt nostrum accusantium totam non. Voluptates corrupti magnam
-                    aut esse accusamus?</p>
+                <p class="md:mt-4 mt-2 lead"> It is like a magical river</p>
+                <p>Like a mystery rhyme</p>
+                <p>That can last forever</p>
+                <p>And can never race with time</p>
+                <p>Like an imaginary song</p>
+                <p>That repeats itself all over again</p>
+                <p>So very very long</p>
+                <p>That it will forever remain</p>
+                <p>It can also heal the hearts cry </p>
+                <p>With a demystifying tone</p>
+                <p>So as to try and multiply</p>
+                <p>The lost love of the lone heart</p>
             </article>
         </div>
 
@@ -73,7 +72,30 @@
 
     </div>
 
-</div>
+</section>
+
+
+<section class="bg-amber-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
+    <h1 class="mb-2 uppercase text-orange-550">Most viewed categories</h1>
+
+    <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
+        <?php for ($i=0; $i < 4 ; $i++) :?>
+        <div class="mx-auto mt-6 w-40 transform overflow-hidden">
+            <img class="h-56 w-full object-cover object-center"
+                src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png" alt="Product Image" />
+            <div class="mt-2">
+                <a href="#" rel="author" class="mb-2 text-xl font-bold text-gray-900">Hate is
+                    nature</a>
+                <p class="mb-2 text-sm font-light text-gray-500 dark:text-gray-400 italic">By Peter Munene
+                </p>
+
+
+            </div>
+        </div>
+        <?php endfor; ?>
+    </div>
+
+</section>
 
 
 <?php include_once 'sections/footer.view.php'; ?>
