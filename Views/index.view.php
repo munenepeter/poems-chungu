@@ -31,12 +31,12 @@
         <div class="md:-ml-32 font-medium md:col-span-3 p-2">
 
             <article
-                class="w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                class="w-full max-w-2xl">
                 <h1
-                    class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+                    class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl ">
                     Love is hate and death</h1>
 
-                <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">By munenepeter</a>
+                <a href="#" rel="author" class="text-xl font-bold text-gray-900 italic">By munenepeter</a>
 
 
                 <p class="md:mt-4 mt-2 lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo odio et assumenda
@@ -54,14 +54,14 @@
 
             <?php for ($i=1; $i < 6; $i++):?>
 
-            <div class="md:my-2 inline-flex items-center dark:text-white">
+            <div class="md:my-2 inline-flex items-center">
                 <div class="mr-3 grid grid-cols-1 justify-items-center bg-slate-200 w-12 rounded-sm">
                     <div class='md:text-3xl text-2xl text-amber-500'>0<?=$i?></div>
                 </div>
                 <div>
-                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Hate is
+                    <a href="#" rel="author" class="text-xl font-bold text-gray-900">Hate is
                         nature</a>
-                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">By Peter Munene
+                    <p class="text-sm font-light text-gray-500 dark:text-gray-400 italic">By Peter Munene
                     </p>
 
                 </div>
