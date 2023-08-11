@@ -6,6 +6,8 @@
     <title>Chungu Poems</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#799649" />
+    <meta name="description"
+        content="Discover the soulful world of poetry at Chungu Poems. Immerse yourself in heartfelt verses that touch upon love, life, and everything in between. Explore and let our words resonate with your heart's emotions." />
     <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/flowbite.min.css" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     <link rel="icon" href="<?php asset("imgs/favicon/norm-favicon.svg") ?>" type="image/svg">
