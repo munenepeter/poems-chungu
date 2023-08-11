@@ -1,14 +1,26 @@
-<section id="footer" class="left-50 w-full  bottom-0"
-    style="position: fixed;  left: 50%; transform: translate(-50%, 0);">
-    <div class="pt-1">
-        <div class="flex px-3 m-auto border-t text-gray-800 text-sm flex-col
-      max-w-screen-lg items-center">
-            <div class="my-5 text-center text-gray-900">&copy; 2020 -
-                <?= date("Y") ?> All rights reserved | Chungu Developers
-            </div>
-        </div>
+<footer class="bg-amber-100 rounded-lg shadow dark:bg-gray-800">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; 2020 -
+            <?= date("Y") ?> <a href="https://dev.chungu.co.ke" class="hover:underline">Chungu Developers</a>. All
+            Rights Reserved.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+            </li>
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline">Contact</a>
+            </li>
+        </ul>
     </div>
-</section>
+</footer>
+
 </body>
 
 </html>

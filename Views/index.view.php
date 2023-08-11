@@ -26,49 +26,48 @@
 
 
 <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
-    <div class="grid grid-cols-6 gap-4 mx-auto">
-        <h1>Latest</h1>
-        <div class="-ml-32 font-medium col-span-3 p-2">
+    <div class="md:grid md:grid-cols-6 md:gap-4 gap-2 mx-auto">
+        <h1 class="mb-2">Latest</h1>
+        <div class="md:-ml-32 font-medium md:col-span-3 p-2">
 
             <article
                 class="w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                 <h1
-                    class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Love is hate and death</h1>
+                    class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+                    Love is hate and death</h1>
 
                 <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">By munenepeter</a>
 
 
-                <p class="mt-4 lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo odio et assumenda sunt perspiciatis corrupti voluptas cum, quisquam quos explicabo.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aliquid consequuntur et enim corrupti totam?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero rem non dolor, repellat optio, omnis qui corrupti voluptas aliquid natus dolorem ipsa quis veniam in cumque facilis animi. Et minus consequatur quisquam dolorem qui, incidunt nostrum accusantium totam non. Voluptates corrupti magnam aut esse accusamus?/p>
+                <p class="md:mt-4 mt-2 lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo odio et assumenda
+                    sunt perspiciatis corrupti voluptas cum, quisquam quos explicabo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aliquid consequuntur et enim
+                    corrupti totam?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero rem non dolor, repellat optio, omnis
+                    qui corrupti voluptas aliquid natus dolorem ipsa quis veniam in cumque facilis animi. Et minus
+                    consequatur quisquam dolorem qui, incidunt nostrum accusantium totam non. Voluptates corrupti magnam
+                    aut esse accusamus?</p>
             </article>
         </div>
 
-        <div class="ml-10">
-            <ol class="relative border-l border-gray-200 dark:border-gray-700">
-                <li class="mb-8 ml-4">
-                    <div
-                        class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
-                    </div>
-                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">01</time>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Love
-                    </h3>
-                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">by Peter Munene
+        <div class="md:ml-10 col-span-2">
+
+            <?php for ($i=1; $i < 6; $i++):?>
+
+            <div class="md:my-2 inline-flex items-center text-sm text-gray-900 dark:text-white">
+                <div class="mr-3 grid grid-cols-1 justify-items-center bg-slate-100 w-12 rounded-sm">
+                    <div class='md:text-3xl text-1xl'>0<?=$i?></div>
+                </div>
+                <div>
+                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Hate is
+                        nature</a>
+                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">By Peter Munene
                     </p>
 
-                </li>
-                <li class="mb-8 ml-4">
-                    <div
-                        class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
-                    </div>
-                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">02</time>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Hate
-                    </h3>
-                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">by Peter Munene
-                    </p>
+                </div>
+            </div>
 
-                </li>
-
+            <?php endfor?>
             </ol>
         </div>
 
