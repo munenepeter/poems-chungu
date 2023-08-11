@@ -80,9 +80,9 @@
 
     <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
         <?php for ($i=0; $i < 4 ; $i++) :?>
-        <div class="mx-auto mt-6 w-40 transform overflow-hidden">
-            <img class="h-56 w-full object-cover object-center"
-                src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png" alt="Product Image" />
+        <div class="mx-auto mt-6 w-40  overflow-hidden">
+            <img class="md:h-56 h-48 w-full object-cover object-center"
+                src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png"/>
             <div class="mt-2">
                 <a href="#" rel="author" class="mb-2 text-xl font-bold text-gray-900">Hate is
                     nature</a>
