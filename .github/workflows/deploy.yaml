@@ -18,6 +18,6 @@ jobs:
          ftp_username: ${{ secrets.ftp_username}}
          ftp_password: ${{ secrets.ftp_password }}
          local_source_dir: "./"
-         dist_target_dir: "./dev.chungu.co.ke"
+         dist_target_dir: "./test.chungu.co.ke"
          delete: "false"
          exclude: "'^config.php' '^README.md' '^composer.lock' '^composer.json' '^.phpunit.result.cache' '^phpunit.xml' '^tests' '^.git/' '^Core/bootstrap.php'"        
