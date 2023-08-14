@@ -1,9 +1,7 @@
 <?php
 
 $router->get('', 'PagesController@index');
-
-
-
+$router->get('auth/login', 'AuthController@index');
 
 
 

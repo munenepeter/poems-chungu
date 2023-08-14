@@ -24,11 +24,11 @@
     </div>
 </section>
 
-
+<!-- Latest poems -->
 <section class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <div class="md:grid md:grid-cols-6 md:gap-4 gap-2 mx-auto">
-        <h1 class="mb-2 uppercase text-orange-550">Latest</h1>
-        <div class="md:-ml-32 font-medium md:col-span-3 p-2 mb-2">
+        <h1 class=" mb-2 uppercase text-orange-550">Latest Poems</h1>
+        <div class="md:-ml-16 font-medium md:col-span-3 p-2 mb-2">
 
             <article class="w-full max-w-2xl">
                 <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl ">L.O.V.E</h1>
@@ -65,28 +65,26 @@
 
                 </div>
             </div>
-
             <?php endfor?>
-            </ol>
+
         </div>
 
     </div>
 
 </section>
 
-
+<!-- Categories -->
 <section class="bg-amber-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <h1 class="mb-2 uppercase text-orange-550">Most viewed categories</h1>
 
-    <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
+    <div class="grid md:grid-cols-4 grid-cols-2 gap-3">
         <?php for ($i=0; $i < 4 ; $i++) :?>
         <div class="mx-auto mt-6 w-40  overflow-hidden">
             <img class="md:h-56 h-48 w-full object-cover object-center"
-                src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png"/>
+                src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png" />
             <div class="mt-2">
-                <a href="#" rel="author" class="mb-2 text-xl font-bold text-gray-900">Hate is
-                    nature</a>
-                <p class="mb-2 text-sm font-light text-gray-500 dark:text-gray-400 italic">By Peter Munene
+                <a href="#" rel="author" class="mb-2 text-xl font-bold text-gray-900">Hate</a>
+                <p class="mb-2 text-sm font-light text-gray-500 dark:text-gray-400 italic">12 items
                 </p>
 
 
@@ -96,6 +94,21 @@
     </div>
 
 </section>
+<!-- qoutes -->
+<section class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
+    <div class="md:grid md:grid-cols-6 md:gap-4 gap-2 mx-auto">
+        <h1 class="lateral-txt mb-2 uppercase text-orange-550">Latest Qoutes</h1>
+        <div class="md:-ml-32 font-medium md:col-span-3 p-2 mb-2">
 
+            <article class="w-full max-w-2xl">
+                <p class="md:mt-4 mt-2 lead"> It is like a magical river</p>
+                <a href="#" rel="author" class="font-semibold text-gray-900 italic">- munenepeter</a>
 
+            </article>
+        </div>
+
+        <div class="md:ml-10 col-span-2 md:border-none border-t md:py-0 py-4">
+        </div>
+    </div>
+</section>
 <?php include_once 'sections/footer.view.php'; ?>

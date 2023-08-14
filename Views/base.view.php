@@ -26,7 +26,7 @@
         }
 
         .bg-green-550 {
-            background-color: #799649;
+            background-color: #799649 !important;
         }
 
         .text-green-550 {
@@ -44,6 +44,7 @@
         [x-cloak] {
             display: none;
         }
+   
     </style>
 
 
