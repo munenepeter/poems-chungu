@@ -68,7 +68,7 @@ include_once 'sections/nav.view.php';
 
                                                                                     <label for="poem" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Poem</label>
 
-                                                                                    <textarea name="poem" id="editor" class="overflow-hidden block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a poem..." ></textarea>
+                                                                                    <textarea name="body" id="editor" class="overflow-hidden block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a poem..."></textarea>
 
                                                                              </div>
                                                                       </div>
@@ -105,25 +105,25 @@ include_once 'sections/nav.view.php';
                             </tr>
                      </thead>
                      <tbody>
-                            <?php foreach ($poems as $poem) : ?>
-                                   <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                          <th scope="row" class="px-3 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                 <?= $poem->title?>
-                                          </th>
-                                          <td class="px-3 py-3">
-                                                 munenepeter
-                                          </td>
-                                          <td class="px-6 py-4">
-                                              <?= $poem->body?>
-                                          </td>
+                            <?php if (!empty($poem)) : ?>
+                                   <?php foreach ($poems as $poem) : ?>
+                                          <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                                 <th scope="row" class="px-3 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        <?= $poem->title ?>
+                                                 </th>
+                                                 <td class="px-3 py-3">
+                                                        <?= $poem->author ?>
+                                                 </td>
+                                                 <td class="px-6 py-4">
+                                                        <?= $poem->body ?>
+                                                 </td>
 
-                                          <td class="px-6 py-4">
-                                                 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                          </td>
-                                   </tr>
-                            <?php endforeach; ?>
-
-
+                                                 <td class="px-6 py-4">
+                                                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                 </td>
+                                          </tr>
+                                   <?php endforeach; ?>
+                            <?php endif; ?>
                      </tbody>
               </table>
        </div>

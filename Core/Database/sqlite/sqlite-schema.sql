@@ -14,3 +14,14 @@ INSERT INTO users (email, password, created_at, updated_at) VALUES ('petermunene
 
 
 UPDATE `users` set email = 'pmunene@chungu.co.ke';
+
+
+
+CREATE TABLE poems (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL UNIQUE,
+  author TEXT NOT NULL,
+  body TEXT NOT NULL,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
