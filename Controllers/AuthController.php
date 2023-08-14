@@ -22,7 +22,7 @@ class AuthController extends Controller {
 
         if (Session::get('loggedIn')) {
 
-            return redirect('/');
+            return redirect('/dashboard');
         } elseif (Session::get('_msg_error') || Session::get('_msg_error') !== '') {
 
             return view('login', [

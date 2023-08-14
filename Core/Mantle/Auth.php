@@ -9,7 +9,6 @@ class Auth {
 
     public static function login(string $email, string $password) {
 
-
         $user =  User::query("select id, email, password  from users where email = \"$email\"");
 
         if (empty($user)) {
