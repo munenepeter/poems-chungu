@@ -7,6 +7,13 @@ $router->get('auth/login', 'AuthController@index');
 $router->post('auth/login', 'AuthController@login');
 $router->post('auth/logout', 'AuthController@signout');
 
+$router->get('dashboard/poems', 'PoemsController@index');
+$router->post('dashboard/poems', 'PoemsController@create');
+
+$router->get('dashboard/qoutes', 'QoutesController@index');
+$router->post('dashboard/qoutes', 'QoutesController@create');
+
+
 
 //logs
 $router->get(':system:/logs', 'SystemController@index');
