@@ -4,6 +4,7 @@ namespace Chungu\Controllers;
 
 use Chungu\Core\Mantle\Auth;
 use Chungu\Core\Mantle\Session;
+use Chungu\Controllers\Controller;
 
 class AuthController extends Controller {
     public function index() {

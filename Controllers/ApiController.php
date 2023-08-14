@@ -2,7 +2,9 @@
 
 namespace Chungu\Controllers;
 
-use Chungu\Models\Meeting;
+
+use Chungu\Models\Poem;
+use Chungu\Controllers\Controller;
 
 /**
  * Api controller
@@ -18,7 +20,7 @@ class ApiController extends Controller {
         $this->middleware('auth');
     }
 
-    public function allMeetings() {
-        return $this->json(Meeting::all());
+    public function allpoems() {
+        return $this->json(Poem::all());
     }
 }

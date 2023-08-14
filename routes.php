@@ -8,10 +8,10 @@ $router->post('auth/login', 'AuthController@login');
 $router->post('auth/logout', 'AuthController@signout');
 
 $router->get('dashboard/poems', 'PoemsController@index');
-$router->post('dashboard/poems', 'PoemsController@create');
+$router->post('dashboard/poems/create', 'PoemsController@create');
 
 $router->get('dashboard/qoutes', 'QoutesController@index');
-$router->post('dashboard/qoutes', 'QoutesController@create');
+$router->post('dashboard/qoutes/create', 'QoutesController@create');
 
 
 

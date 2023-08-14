@@ -2,6 +2,8 @@
 
 namespace Chungu\Controllers;
 
+use Chungu\Controllers\Controller;
+
 class SystemController extends Controller
 {
 

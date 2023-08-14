@@ -2,7 +2,7 @@
 
 namespace Chungu\Controllers;
 
-use Chungu\Models\Meeting;
+use Chungu\Controllers\Controller;
 
 class PagesController extends Controller {
 
