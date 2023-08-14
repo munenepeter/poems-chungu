@@ -44,6 +44,11 @@
             </div>
             <ul class="py-1 text-gray-700 normal-case" aria-labelledby="dropdown">
               <li>
+                <a href="/dashboard"
+                  class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  Dashboard</a>
+              </li>
+              <li>
                 <a href="/:system:/logs"
                   class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">View
                   Logs</a>
