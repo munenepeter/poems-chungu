@@ -5,8 +5,7 @@ use Chungu\Core\Mantle\App;
 use Chungu\Core\Mantle\Auth;
 use Chungu\Core\Mantle\Logger;
 use Chungu\Core\Mantle\Request;
-use Chungu\Core\Mantle\Session;
-use Chungu\Core\Calendar;
+use Chungu\Core\Mantle\Session; 
 
 define("BASE_URL",  sprintf(
     "%s://%s",
@@ -128,55 +127,8 @@ function wp_strip_all_tags($string, $remove_breaks = false) {
 
 
 
-function getRandColor() {
-    $rgbColor = [];
-    foreach (['r', 'g', 'b'] as $color) {
-        //Generate a random number between 0 and 255.
-        $rgbColor[$color] = mt_rand(0, 255);
-    }
-    $colorCode = implode(",", $rgbColor);
-    return "rgb($colorCode)";
-}
-/**
- * subtract_date
- * 
- * Subtracts a number of days from a date
- * 
- * @param  string $days_to_subtract no of days to subtract
- * 
- * @return string the date after subtracting
- */
-
-function subtract_date($days_to_subtract) {
-    $date = date_create(date('Y-m-d H:i:s', time()));
-    date_sub($date, date_interval_create_from_date_string("2 days"));
-    return date_format($date, 'Y-m-d H:i:s');
-}
-
-/**
- * Converts a time string to 10 AM.
- *
- * @param string $time The time string in 24-hour format.
- * @return string The time in 10 AM format.
- */
-function get_time(string $time): string {
-    $hour = date("G", strtotime($time));
-
-    if ($hour >= 12) {
-        $am_pm = "PM";
-        if ($hour > 12) {
-            $hour -= 12;
-        }
-    } else {
-        $am_pm = "AM";
-        if ($hour == 0) {
-            $hour = 12;
-        }
-    }
-
-    return "$hour$am_pm";
-}
-
+ 
+ 
 
 
 function slug($string) {
@@ -343,11 +295,7 @@ function url() {
     }
 }
 
-function notify($message) {
-    echo '<script type="text/javascript">',
-    "notify('$message');",
-    '</script>';
-}
+ 
 function format_date($date) {
     return date("jS M Y ", strtotime($date));
 }
@@ -397,13 +345,7 @@ function asset($dir) {
 
     echo $baseUrl . "/static/$dir";
 }
-function get_perc($total, $number) {
-    if ($total > 0) {
-        return round(($number * 100) / $total, 2);
-    } else {
-        return 0;
-    }
-}
+ 
 
 function logger(string $level, string $message) {
     Logger::log($level, $message);
@@ -422,15 +364,7 @@ function request(string $key = "") {
 }
 
 
-function get_notifications() {
-    if (empty(Session::get("notifications"))) {
-        return [];
-    }
-    return Session::get("notifications");
-}
-function delete_notifications() {
-    return Session::unset("notifications");
-}
+ 
 function session_get($value) {
     return Session::get($value);
 }
@@ -441,33 +375,7 @@ function get_errors() {
     }
     return Request::$errors;
 }
-/**
- * Format duration from db
- * 
- * @example 
- * "00:30:00"  to be 30 mins
- * "00:45:00"  to be 45 mins
- * "01:30:00"   to be 1hr 30mins
- */
-function format_time_to_minutes($time_string) {
-    // Get the full time string.
-    $time = strtotime($time_string);
 
-    // Get the hours and minutes from the time string.
-    $hours = (int)date("H", $time);
-    $minutes = (int)date("i", $time);
-
-    // If the hours are 0 and the minutes are less than 60, just return them.
-    if ($hours === 0 && $minutes < 60) {
-        return strval($minutes) . "mins";
-    }
-    if ($minutes === 0) {
-        return strval($hours) . "hrs";
-    }
-
-    // Otherwise, return the time in the format "1hr 30mins".
-    return sprintf("%dhrs %dmins", $hours, $minutes);
-}
 
 function format_meeting_date(string $dateString) {
     $timestamp = strtotime($dateString);

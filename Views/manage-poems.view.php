@@ -115,7 +115,7 @@ include_once 'sections/nav.view.php';
                                                         <?= $poem->author ?>
                                                  </td>
                                                  <td class="px-6 py-4">
-                                                        <?= $poem->body ?>
+                                                        <?= wp_strip_all_tags($poem->body) ?>
                                                  </td>
 
                                                  <td class="px-6 py-4">
