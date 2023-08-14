@@ -3,14 +3,13 @@
 namespace Chungu\Controllers;
 
 use Chungu\Core\Mantle\Auth;
-use Chungu\Core\Mantle\Request;
 use Chungu\Core\Mantle\Session;
 
 class AuthController extends Controller {
     public function index() {
         if (Session::get('loggedIn')) {
 
-            return redirect('/');
+            return redirect('/dashboard');
         }
         return view('login');
     }

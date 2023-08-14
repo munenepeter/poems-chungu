@@ -2,9 +2,10 @@
 
 $router->get('', 'PagesController@index');
 $router->get('dashboard', 'PagesController@dashboard');
+
 $router->get('auth/login', 'AuthController@index');
 $router->post('auth/login', 'AuthController@login');
-
+$router->post('auth/logout', 'AuthController@signout');
 
 
 //logs
