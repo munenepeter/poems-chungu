@@ -105,7 +105,7 @@ include_once 'sections/nav.view.php';
                             </tr>
                      </thead>
                      <tbody>
-                            <?php if (!empty($poem)) : ?>
+                            <?php if (!empty($poems)) : ?>
                                    <?php foreach ($poems as $poem) : ?>
                                           <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                                  <th scope="row" class="px-3 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -115,7 +115,7 @@ include_once 'sections/nav.view.php';
                                                         <?= $poem->author ?>
                                                  </td>
                                                  <td class="px-6 py-4">
-                                                        <?= wp_strip_all_tags($poem->body) ?>
+                                                        <?= wp_strip_all_tags(htmlspecialchars_decode($poem->body )) ?>
                                                  </td>
 
                                                  <td class="px-6 py-4">

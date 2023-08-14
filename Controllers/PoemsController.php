@@ -20,6 +20,27 @@ class PoemsController extends Controller {
     }
 
     public function create() {
-        $this->json(request()->all());
+
+  
+        $this->request()->validate([
+            'title' => request('title'),
+            'author' => request('author'),
+            'body' => request('body')
+        ],[
+            'title' => 'required',
+            'author' => 'required',
+            'body' => 'required'
+        ]);
+
+    
+       Poem::create([
+        'title' => request('title'),
+        'author' => request('author'),
+        'body' => request('body')
+       ]);
+
+       $this->json('success', 200);
+
+       redirect('/dashboard/poems');
     }
 }
