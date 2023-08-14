@@ -2,7 +2,7 @@
 
 $router->get('', 'PagesController@index');
 $router->get('auth/login', 'AuthController@index');
-
+$router->post('auth/login', 'AuthController@login');
 
 
 

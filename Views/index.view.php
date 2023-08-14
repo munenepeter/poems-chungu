@@ -98,7 +98,7 @@
 <section class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <div class="md:grid md:grid-cols-6 md:gap-4 gap-2 mx-auto">
         <h1 class="lateral-txt mb-2 uppercase text-orange-550">Latest Qoutes</h1>
-        <div class="md:-ml-32 font-medium md:col-span-3 p-2 mb-2">
+        <div class="font-medium md:col-span-3 p-2 mb-2">
 
             <article class="w-full max-w-2xl">
                 <p class="md:mt-4 mt-2 lead"> It is like a magical river</p>

@@ -2,31 +2,31 @@
 
 namespace Chungu\Core\Mantle;
 
-use Chungu\Models\Employee; 
+use Chungu\Models\User; 
 use Chungu\Core\Mantle\Session;
 
 class Auth {
 
-    public static function login(String $email, String $password) {
+    public static function login(string $email, string $password) {
 
 
-        $employee =  Employee::query("select employee_no, email, password  from employees where email = \"$email\"");
+        $user =  User::query("select id, email, password  from users where email = \"$email\"");
 
-        if (empty($employee)) {
+        if (empty($user)) {
             logger("Info","Login: No account with {$email} email with {$password}");
             Session::make('_msg_error', "Wrong credentials, Please try again!");
             return redirectback();
         }
-        $employee = (object)$employee[0];
+        $user = (object)$user[0];
 
     
-        if (password_verify($password, $employee->password)) {
+        if (password_verify($password, $user->password)) {
 
             logger("Info","Login: Logged in {$email} with {$password}");
 
             Session::make('loggedIn', true);
-            Session::make('employee_no', $employee->employee_no);
-            Session::make('email', $employee->email);
+            Session::make('user_id', $user->user_id);
+            Session::make('email', $user->email);
 
             Session::make('_msg_success', "Successfull login");
             return;
@@ -36,12 +36,12 @@ class Auth {
             return redirectback();
         }
     }
-    public static function logout(String $employee) {
+    public static function logout(string $user) {
         
-        Session::unset($employee);
+        Session::unset($user);
         Session::make('loggedIn', false);
 
-        logger("Info","Login: logged out $employee");
+        logger("Info","Login: logged out $user");
         Session::destroy();
     }
 }

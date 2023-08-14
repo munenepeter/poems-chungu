@@ -4,7 +4,7 @@
 
        <div
               class="w-full max-w-sm p-4 bg-white border border-amber-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-amber-800 dark:border-amber-700">
-              <form class="space-y-6" action="#">
+              <form class="space-y-6" action="/auth/login" method="post">
                      <h5 class="text-xl font-medium text-orange-550 dark:text-white">Welcome back to Chungu Poems</h5>
                      <div>
                             <label for="email" class="block mb-2 text-sm font-medium text-orange-550 dark:text-white">Your
