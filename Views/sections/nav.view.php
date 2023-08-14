@@ -10,20 +10,72 @@
     </a>
 
     <div class="">
+      <?php if(auth()):?>
       <ul class="flex md:space-x-8 space-x-2 bg-transparent md:font-medium uppercase">
-        <li>
-          <a href="#"
-            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-        </li>
         <li>
           <a href="#"
             class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
         </li>
         <li>
           <a href="#"
-            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white  md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Reviews</a>
+            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Qoutes</a>
         </li>
-      </ul>
+        <li>
+          <button type="button"
+            class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+            id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
+            <span class="sr-only">Open user menu</span>
+            <img class="w-6 h-6 rounded-full"
+              src="https://ui-avatars.com/api/?name=<?= ucfirst(strstr(session_get('email'), '@', true)) ?>&background=random"
+              alt="user photo" />
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            class="hidden z-50 my-4 w-56 text-base list-none bg-amber-50 rounded divide-y divide-gray-100 shadow rounded-xl"
+            id="dropdown">
+            <div class="py-3 px-4">
+
+              <span class="block text-xs font-semibold text-gray-700 normal-case ">
+                <?= ucfirst(strstr(session_get('email'), '@', true)) ?>
+              </span>
+              <span class="block text-xs text-gray-700 truncate normal-case">
+                <?= session_get('email') ?>
+              </span>
+            </div>
+            <ul class="py-1 text-gray-700 normal-case" aria-labelledby="dropdown">
+              <li>
+                <a href="/:system:/logs"
+                  class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">View
+                  Logs</a>
+              </li>
+              <li>
+                <form action="/auth/logout" method="post">
+                  <input type="hidden" name="_logout" value="<?= md5(session_get('email')) ?>">
+                  <button role="button" type="submit"
+                    class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                    out</button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <?php else: ?>
+        <ul class="flex md:space-x-8 space-x-2 bg-transparent md:font-medium uppercase">
+          <li>
+            <a href="#"
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+          </li>
+          <li>
+            <a href="#"
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
+          </li>
+          <li>
+            <a href="#"
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white  md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Reviews</a>
+          </li>
+          <?php endif; ?>
+        </ul>
     </div>
   </div>
 </nav>
