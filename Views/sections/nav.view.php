@@ -1,6 +1,7 @@
-<nav class="bg-green-550 fixed w-full top-0 -mb-2">
+<nav class="bg-asparagus-500 fixed w-full top-0 -mb-2"
+  style=" background-image: linear-gradient(135deg, rgb(152, 179, 104) 0%, rgb(74, 93, 46) 100%);">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="/" class="flex items-center text-orange-550">
+    <a href="/" class="flex items-center text-japonica-400">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="w-8 h-8 mr-3 hidden md:block">
         <path stroke-linecap="round" stroke-linejoin="round"
@@ -14,11 +15,11 @@
       <ul class="flex md:space-x-8 space-x-2 bg-transparent md:font-medium uppercase">
         <li>
           <a href="/dashboard/poems"
-            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
+            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
         </li>
         <li>
           <a href="/dashboard/qoutes"
-            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Qoutes</a>
+            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Qoutes</a>
         </li>
         <li>
           <button type="button"
@@ -31,7 +32,7 @@
           </button>
           <!-- Dropdown menu -->
           <div
-            class="hidden z-50 my-4 w-56 text-base list-none bg-amber-50 rounded divide-y divide-gray-100 shadow rounded-xl"
+            class="hidden z-50 my-4 w-56 text-base list-none bg-amber-50  divide-y divide-gray-100 shadow rounded-xl"
             id="dropdown">
             <div class="py-3 px-4">
 
@@ -69,15 +70,15 @@
         <ul class="flex md:space-x-8 space-x-2 bg-transparent md:font-medium uppercase">
           <li>
             <a href="#"
-              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
           </li>
           <li>
             <a href="#"
-              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
           </li>
           <li>
             <a href="#"
-              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white  md:hover:bg-transparent md:hover:text-orange-550 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Reviews</a>
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white  md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Reviews</a>
           </li>
           <?php endif; ?>
         </ul>

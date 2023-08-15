@@ -1,23 +1,27 @@
 <?php include_once 'base.view.php'; ?>
 <?php include_once 'sections/nav.view.php'; ?>
 
-<section class="bg-green-550 md:h-64 lg:72 pt-8  md:mt-16 mt-8 ">
+<section class="bg-asparagus-500 md:h-64 lg:72 pt-8  md:mt-16 mt-8 "
+    style="background-image: linear-gradient(135deg, rgb(152, 179, 104) 0%, rgb(74, 93, 46) 100%);">
     <div class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-2">
         <div class="flex flex-col justify-between lg:flex-row px-5">
             <div class="mb-8 lg:max-w-lg lg:pr-5 lg:mb-0">
-                <h1 class="text-white font-extrabold md:text-6xl text-4xl">New poetry, every week</h1>
+                <h1 class="text-asparagus-100 font-extrabold md:text-6xl text-4xl">New poetry, every week</h1>
             </div>
             <div class="pb-5 lg:w-2/5">
-                <p class='pb-8 text-gray-100'>Sign up to get new poetry playlist in your inbox every week.You'll receive
+                <p class='pb-8 text-asparagus-50'>Sign up to get new poetry playlist in your inbox every week.You'll
+                    receive
                     set
                     of poems around a different theme, with a focus on contemporary poets. It's free, and you can
                     unsubsribe anytime. Read more about us</p>
 
                 <div class='flex sm:flex-row md:p-0'>
                     <input
-                        class='px-2 md:px-8 py-2 md:py-3 md:text-lg transition-all duration-300 focus:outline-none focus:right-1 '
+                        class='px-2 md:px-8 py-2 md:py-3 md:text-lg transition-all duration-300 focus:outline-none
+                        bg-asparagus-50 text-asparagus-950 placeholder:text-asparagus-950
+                        focus:border-asparagus-500 focus:ring-asparagus-500 focus:ring-1'
                         placeholder='Enter your email' type="text" />
-                    <button class='ml-1 px-2 md:px-6 py-2 md:py-3 font-semibold bg-amber-500'>Subscribe</button>
+                    <button class='ml-1 px-2 md:px-6 py-2 md:py-3 font-semibold bg-japonica-400 text-japonica-950'>Subscribe</button>
                 </div>
             </div>
         </div>
@@ -27,14 +31,14 @@
 <!-- Latest poems -->
 <section class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <div class="md:grid md:grid-cols-6 md:gap-4 gap-2 mx-auto">
-        <h1 class=" mb-2 uppercase text-orange-550">Latest Poems</h1>
+        <h1 class=" mb-2 uppercase text-japonica-500">Latest Poems</h1>
         <div class="md:-ml-16 font-medium md:col-span-3 p-2 mb-2">
 
             <article class="w-full max-w-2xl">
-                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl ">L.O.V.E</h1>
+                <h1 class="mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl ">L.O.V.E</h1>
 
-                <a href="#" rel="author" class="text-xl font-bold text-gray-900 italic">By munenepeter</a>
-                <p class="md:mt-4 mt-2 lead"> It is like a magical river</p>
+                <a href="#" rel="author" class="text-md font-bold text-japonica-900 italic">by munenepeter</a>
+                <p class="md:mt-4 mt-2 lead text-japonica-950"> It is like a magical river</p>
                 <p>Like a mystery rhyme</p>
                 <p>That can last forever</p>
                 <p>And can never race with time</p>
@@ -55,12 +59,12 @@
 
             <div class="md:my-2 inline-flex items-center">
                 <div class="mr-3 grid grid-cols-1 justify-items-center bg-slate-100 w-12 rounded-md">
-                    <div class='md:text-3xl text-2xl text-amber-700'>0<?=$i?></div>
+                    <div class='md:text-3xl text-2xl text-asparagus-900'>0<?=$i?></div>
                 </div>
                 <div>
-                    <a href="#" rel="author" class="text-xl font-bold text-gray-900">Hate is
+                    <a href="#" rel="author" class="text-xl font-bold text-asparagus-900">Hate is
                         nature</a>
-                    <p class="text-sm font-light text-gray-500 dark:text-gray-400 italic">By Peter Munene
+                    <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by peter munene
                     </p>
 
                 </div>
@@ -74,8 +78,8 @@
 </section>
 
 <!-- Categories -->
-<section class="bg-amber-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
-    <h1 class="mb-2 uppercase text-orange-550">Most viewed categories</h1>
+<section class="bg-asparagus-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
+    <h1 class="mb-2 uppercase text-japonica-500">Most viewed categories</h1>
 
     <div class="grid md:grid-cols-4 grid-cols-2 gap-3">
         <?php for ($i=0; $i < 4 ; $i++) :?>
@@ -97,7 +101,7 @@
 <!-- qoutes -->
 <section class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <div class="md:grid md:grid-cols-6 md:gap-4 gap-2 mx-auto">
-        <h1 class="lateral-txt mb-2 uppercase text-orange-550">Latest Qoutes</h1>
+        <h1 class="lateral-txt mb-2 uppercase text-japonica-500">Latest Qoutes</h1>
         <div class="font-medium md:col-span-3 p-2 mb-2">
 
             <article class="w-full max-w-2xl">
