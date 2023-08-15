@@ -4,7 +4,7 @@ include_once 'sections/nav.view.php';
 ?>
 
 <!-- Latest poems -->
-<section class="pt-8  md:mt-16 mt-8 px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
+<section class="pt-8 md:mt-20 mt-8 px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
        <div class=" overflow-x-auto shadow-md sm:rounded-lg">
               <div class="w-full">
                      <!-- Start coding here -->

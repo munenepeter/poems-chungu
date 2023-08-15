@@ -26,7 +26,7 @@
             class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
             id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
             <span class="sr-only">Open user menu</span>
-            <img class="w-6 h-6 rounded-full"
+            <img class="w-4 h-4 rounded-full"
               src="https://ui-avatars.com/api/?name=<?= ucfirst(strstr(session_get('email'), '@', true)) ?>&background=random"
               alt="user photo" />
           </button>

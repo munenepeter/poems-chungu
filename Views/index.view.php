@@ -58,7 +58,7 @@
             <?php for ($i=1; $i < 6; $i++):?>
 
             <div class="md:my-2 inline-flex items-center">
-                <div class="mr-3 grid grid-cols-1 justify-items-center bg-slate-100 w-12 rounded-md">
+                <div class="mr-3 grid grid-cols-1 justify-items-center bg-japonica-100 w-12 rounded-md">
                     <div class='md:text-3xl text-2xl text-asparagus-900'>0<?=$i?></div>
                 </div>
                 <div>
