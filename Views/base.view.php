@@ -44,4 +44,4 @@
 
 </head>
 
-<body class="bg-japonica-50">
+<body class="bg-white">

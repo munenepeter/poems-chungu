@@ -15,11 +15,11 @@
       <ul class="flex md:space-x-8 space-x-2 bg-transparent md:font-medium uppercase">
         <li>
           <a href="/dashboard/poems"
-            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
+            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
         </li>
         <li>
           <a href="/dashboard/qoutes"
-            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Qoutes</a>
+            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Qoutes</a>
         </li>
         <li>
           <button type="button"
@@ -32,33 +32,37 @@
           </button>
           <!-- Dropdown menu -->
           <div
-            class="hidden z-50 my-4 w-56 text-base list-none bg-amber-50  divide-y divide-gray-100 shadow rounded-xl"
-            id="dropdown">
+            class="hidden z-50 my-4 w-56 text-base list-none bg-japonica-50 divide-y divide-gray-100 shadow rounded-xl
+            border"
+            id="dropdown"
+
+            style="background-color: rgb(253, 245, 243); border-color: rgb(232, 148,
+            129);">
             <div class="py-3 px-4">
 
-              <span class="block text-xs font-semibold text-gray-700 normal-case ">
+              <span class="block text-xs font-semibold text-japonica-700 normal-case ">
                 <?= ucfirst(strstr(session_get('email'), '@', true)) ?>
               </span>
               <span class="block text-xs text-gray-700 truncate normal-case">
                 <?= session_get('email') ?>
               </span>
             </div>
-            <ul class="py-1 text-gray-700 normal-case" aria-labelledby="dropdown">
+            <ul class="py-1 text-japonica-700 normal-case" aria-labelledby="dropdown">
               <li>
                 <a href="/dashboard"
-                  class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  class="block py-2 px-4 text-sm hover:bg-gray-100">
                   Dashboard</a>
               </li>
               <li>
                 <a href="/:system:/logs"
-                  class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">View
+                  class="block py-2 px-4 text-sm hover:bg-gray-100">View
                   Logs</a>
               </li>
               <li>
                 <form action="/auth/logout" method="post">
                   <input type="hidden" name="_logout" value="<?= md5(session_get('email')) ?>">
                   <button role="button" type="submit"
-                    class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                    class="block py-2 px-4 text-sm hover:bg-gray-100">Sign
                     out</button>
                 </form>
               </li>
@@ -70,15 +74,15 @@
         <ul class="flex md:space-x-8 space-x-2 bg-transparent md:font-medium uppercase">
           <li>
             <a href="#"
-              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50 md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">About</a>
           </li>
           <li>
             <a href="#"
-              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50 md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
           </li>
           <li>
             <a href="#"
-              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white  md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Reviews</a>
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50  md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Reviews</a>
           </li>
           <?php endif; ?>
         </ul>
