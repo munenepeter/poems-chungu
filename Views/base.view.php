@@ -13,7 +13,6 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
         integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
