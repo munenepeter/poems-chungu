@@ -17,7 +17,7 @@ class Middleware {
 
     private function auth() {
         if (!auth()) {
-            return redirect('/login');
+            return redirect('/auth/login');
         }
     }
     private function admin() {

@@ -1,5 +1,6 @@
 composer.phar
 .phpunit.result.cache
+/node_modules/
 /.vscode/
 /vendor/
 /Core/Mantle/Logs/logs.log
