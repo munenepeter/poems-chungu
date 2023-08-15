@@ -12,7 +12,7 @@
                                    email</label>
                             <input type="email" name="email" id="email" class="bg-asparagus-50 border border-asparagus-300 text-asparagus-800 rounded-lg
                                    focus:ring-asparagus-500 focus:border-asparagus-500 block w-full p-2.5 "
-                                   placeholder="name@company.com" required>
+                                   placeholder="name@chungu.co.ke" required>
                      </div>
                      <div>
                             <label for="password" class="block mb-2 font-medium text-asparagus-800 ">Your
