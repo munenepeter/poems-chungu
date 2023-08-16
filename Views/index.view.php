@@ -35,7 +35,7 @@
             <h1 class=" mb-2 uppercase text-japonica-500">Featured Poem</h1>
             <article class="w-full max-w-2xl">
                 <h1 class="mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl ">
-                    <?=$featured_poem->title?></h1>
+                    <?=ucwords($featured_poem->title)?></h1>
 
                 <a href="#" rel="author" class="text-sm font-bold text-japonica-900 uppercase">by
                     <?=$featured_poem->author?></a>
@@ -57,7 +57,8 @@
                         <div class='md:text-3xl text-2xl text-asparagus-900'>0<?= $i ?></div>
                     </div>
                     <div>
-                        <a href="#" rel="author" class="text-xl font-bold text-asparagus-900"><?=$poem->title;?></a>
+                        <a href="/poems/<?= $poem->id ?>" rel="author"
+                            class="text-xl font-bold text-asparagus-900"><?=ucwords($poem->title);?></a>
                         <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by
                             <?=$poem->author;?>
                         </p>
@@ -80,15 +81,14 @@
 
     <div class="grid md:grid-cols-4 grid-cols-2 gap-3">
         <?php for ($i = 0; $i < 4; $i++) : ?>
+
         <div class="mx-auto mt-6 w-40  overflow-hidden">
             <img class="md:h-56 h-48 w-full object-cover object-center"
                 src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png" />
             <div class="mt-2">
                 <a href="#" rel="author" class="mb-2 text-xl font-bold text-gray-900">Hate</a>
                 <p class="mb-2 text-sm font-light text-gray-500 dark:text-gray-400 italic">12 items
-                </p>
-
-
+        </p>
             </div>
         </div>
         <?php endfor; ?>

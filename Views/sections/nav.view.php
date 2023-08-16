@@ -14,11 +14,11 @@
       <?php if(auth()):?>
       <ul class="flex md:space-x-8 space-x-2 bg-transparent md:font-medium uppercase">
         <li>
-          <a href="/dashboard/poems"
+          <a href="/admin/poems"
             class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500">Poems</a>
         </li>
         <li>
-          <a href="/dashboard/qoutes"
+          <a href="/admin/qoutes"
             class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500">Qoutes</a>
         </li>
         <li>

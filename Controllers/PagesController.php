@@ -12,12 +12,12 @@ class PagesController extends Controller {
     }
 
     public function index() {
-
         $poems = Poem::all();
+        $latestpoems = array_slice($poems, 0, 5);
         $featured_poem = $poems[array_rand($poems)];
 
         return view('index',[
-            'poems' => $poems,
+            'poems' => $latestpoems,
             'featured_poem' => $featured_poem
         ]);
     }

@@ -5,10 +5,10 @@ namespace Chungu\Core\Mantle;
 class Middleware {
 
     protected $middleware = [
-        'auth', 'admin'
+        'auth', 'admin', 'api'
     ];
 
-    public function middleware(String $middleware) {
+    public function middleware(string $middleware) {
         if (!in_array($middleware, $this->middleware)) {
             throw new \Exception("This {$middleware} middleware doesn't exist", 500);
         }
@@ -25,4 +25,5 @@ class Middleware {
             return redirectback();
         }
     }
+ 
 }

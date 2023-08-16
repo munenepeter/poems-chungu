@@ -7,13 +7,14 @@ $router->get('auth/login', 'AuthController@index');
 $router->post('auth/login', 'AuthController@login');
 $router->post('auth/logout', 'AuthController@signout');
 
-$router->get('dashboard/poems', 'PoemsController@index');
-$router->post('dashboard/poems/create', 'PoemsController@create');
+$router->get('admin/poems', 'PoemsController@index');
+$router->post('admin/poems/create', 'PoemsController@create');
 
-$router->get('dashboard/qoutes', 'QoutesController@index');
-$router->post('dashboard/qoutes/create', 'QoutesController@create');
+$router->get('admin/qoutes', 'QoutesController@index');
+$router->post('admin/qoutes/create', 'QoutesController@create');
 
-
+//api
+$router->get('api/poems', 'ApiController@allpoems');
 
 //logs
 $router->get(':system:/logs', 'SystemController@index');
