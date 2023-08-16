@@ -31,32 +31,25 @@
 <!-- Latest poems -->
 <section class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <div class="container md:flex md:justify-around mx-auto">
-    
         <div class="font-medium col-span-2 p-2 mb-2">
             <h1 class=" mb-2 uppercase text-japonica-500">Featured Poem</h1>
             <article class="w-full max-w-2xl">
-                <h1 class="mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl ">L.O.V.E
-                </h1>
+                <h1 class="mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl ">
+                    <?=$featured_poem->title?></h1>
 
-                <a href="#" rel="author" class="text-sm font-bold text-japonica-900 uppercase">by munenepeter</a>
-                <p class="md:mt-4 mt-2 lead text-japonica-950"> It is like a magical river</p>
-                <p>Like a mystery rhyme</p>
-                <p>That can last forever</p>
-                <p>And can never race with time</p>
-                <p>Like an imaginary song</p>
-                <p>That repeats itself all over again</p>
-                <p>So very very long</p>
-                <p>That it will forever remain</p>
-                <p>It can also heal the hearts cry </p>
-                <p>With a demystifying tone</p>
-                <p>So as to try and multiply</p>
-                <p>The lost love of the lone heart</p>
+                <a href="#" rel="author" class="text-sm font-bold text-japonica-900 uppercase">by
+                    <?=$featured_poem->author?></a>
+                <div class="prose md:mt-4 mt-2 lead text-japonica-950">
+                  <?=htmlspecialchars_decode($featured_poem->body)?>
+                </div>
+
             </article>
         </div>
 
         <div class="col-span-2 md:border-none border-t md:py-0 py-4">
             <h1 class="mb-2 uppercase text-japonica-500">Latest Poems</h1>
-            <?php for ($i = 1; $i < 7; $i++) : ?>
+            <?php $i = 1; ?>
+            <?php foreach ($poems as $poem) : ?>
 
             <article>
                 <div class="md:my-2 inline-flex items-center">
@@ -64,15 +57,15 @@
                         <div class='md:text-3xl text-2xl text-asparagus-900'>0<?= $i ?></div>
                     </div>
                     <div>
-                        <a href="#" rel="author" class="text-xl font-bold text-asparagus-900">Hate is
-                            nature</a>
-                        <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by peter munene
+                        <a href="#" rel="author" class="text-xl font-bold text-asparagus-900"><?=$poem->title;?></a>
+                        <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by
+                            <?=$poem->author;?>
                         </p>
 
                     </div>
                 </div>
-            </article>
-            <?php endfor ?>
+            </article><?php $i++; ?>
+            <?php endforeach ?>
 
         </div>
 

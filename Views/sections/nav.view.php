@@ -15,21 +15,19 @@
       <ul class="flex md:space-x-8 space-x-2 bg-transparent md:font-medium uppercase">
         <li>
           <a href="/dashboard/poems"
-            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
+            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500">Poems</a>
         </li>
         <li>
           <a href="/dashboard/qoutes"
-            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Qoutes</a>
+            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500">Qoutes</a>
         </li>
         <li>
-          <button type="button"
-            class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+          <a type="button"
+            class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-white md:hover:bg-transparent
+            md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 cursor-pointer"
             id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
-            <span class="sr-only">Open user menu</span>
-            <img class="w-4 h-4 rounded-full"
-              src="https://ui-avatars.com/api/?name=<?= ucfirst(strstr(session_get('email'), '@', true)) ?>&background=random"
-              alt="user photo" />
-          </button>
+            Admin
+          </a>
           <!-- Dropdown menu -->
           <div
             class="hidden z-50 my-4 w-56 text-base list-none bg-japonica-50 divide-y divide-gray-100 shadow rounded-xl
@@ -74,15 +72,15 @@
         <ul class="flex md:space-x-8 space-x-2 bg-transparent md:font-medium uppercase">
           <li>
             <a href="#"
-              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50 md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50 md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500">About</a>
           </li>
           <li>
             <a href="#"
-              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50 md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Poems</a>
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50 md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500">Poems</a>
           </li>
           <li>
             <a href="#"
-              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50  md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500 dark:text-white dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Reviews</a>
+              class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50  md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500">Reviews</a>
           </li>
           <?php endif; ?>
         </ul>
