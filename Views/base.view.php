@@ -26,13 +26,13 @@
             font-family: 'EB Garamond', serif;
         }
 
-        .bg-asparagus-500 {
+        /* .bg-asparagus-500 {
             background-color: #799649 !important;
         }
 
         .text-asparagus-500 {
             color: #799649;
-        }
+        } */
 
         [x-cloak] {
             display: none;
