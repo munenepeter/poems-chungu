@@ -19,7 +19,7 @@
                     <input type="email" class='px-2 md:px-8 py-2 md:py-3 md:text-lg transition-all duration-300 focus:outline-none
                         bg-asparagus-50 text-asparagus-950 placeholder:text-asparagus-950
                         focus:border-asparagus-500 focus:ring-asparagus-500 focus:ring-1'
-                        placeholder='Enter your email' type="text" required />
+                        placeholder='Enter your email' name="subscriber" required />
                     <button type="submit"
                         class="ml-1 px-2 md:px-6 py-2 md:py-3 font-semibold bg-japonica-400 text-japonica-950" >Subscribe</button>
                 </form>

@@ -2,13 +2,12 @@
  * 
  * form submission
  */
-const subscribeForm = document.querySelector("#subscribe-form");
+const subscribeForm = document.getElementById("subscribe-form");
 subscribeForm.addEventListener("submit", (e) => {
     e.preventDefault();
- 
 
     const formData = new FormData(subscribeForm);
-    const url = "/subscribe/new";
+    const url = "subscribe";
     axios
         .post(url, formData, {
             headers: {

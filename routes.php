@@ -13,6 +13,10 @@ $router->post('admin/poems/create', 'PoemsController@create');
 $router->get('admin/qoutes', 'QoutesController@index');
 $router->post('admin/qoutes/create', 'QoutesController@create');
 
+
+//subscribers
+$router->post('subscribe', 'SubscribersController@create');
+
 //api
 $router->get('api/poems', 'ApiController@allpoems');
 

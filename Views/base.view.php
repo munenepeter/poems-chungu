@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-    <script src="<?= asset('js/index.js') ?>"></script>
+    <script defer src="<?= asset('js/index.js') ?>"></script>
 
     <link rel="stylesheet" href="<?= asset('css/output.css') ?>">
     <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/flowbite.min.css" />
