@@ -1,8 +1,7 @@
 <?php include_once 'base.view.php'; ?>
 <?php include_once 'sections/nav.view.php'; ?>
 
-<section class="bg-asparagus-500 md:h-64 lg:72 pt-8  md:mt-16 mt-8 "
-    style="background-image: linear-gradient(135deg, rgb(152, 179, 104) 0%, rgb(74, 93, 46) 100%);">
+<section class="bg-asparagus-500 md:h-64 lg:72 pt-8  md:mt-16 mt-8 " style="background-image: linear-gradient(135deg, rgb(152, 179, 104) 0%, rgb(74, 93, 46) 100%);">
     <div class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-2">
         <div class="flex flex-col justify-between lg:flex-row px-5">
             <div class="mb-8 lg:max-w-lg lg:pr-5 lg:mb-0">
@@ -16,13 +15,12 @@
                     unsubsribe anytime. Read more about us</p>
 
                 <form id="subscribe-form" method="POST" class='flex sm:flex-row md:p-0'>
-                    <input type="email" class='px-2 md:px-8 py-2 md:py-3 md:text-lg transition-all duration-300 focus:outline-none
+                    <input id="subscribe-input" type="email" class='px-2 md:px-10 py-2 md:py-4 md:text-lg transition-all duration-300 focus:outline-none
                         bg-asparagus-50 text-asparagus-950 placeholder:text-asparagus-950
-                        focus:border-asparagus-500 focus:ring-asparagus-500 focus:ring-1'
-                        placeholder='Enter your email' name="subscriber" required />
-                    <button id="subscribeBtn" type="submit"
-                        class="ml-1 px-2 md:px-6 py-2 md:py-3 font-semibold bg-japonica-400 text-japonica-950" >Subscribe</button>
+                        focus:border-asparagus-500 focus:ring-asparagus-500 focus:ring-1' placeholder='Enter your email' name="subscriber" required />
+                    <button id="subscribeBtn" type="submit" class="ml-1 px-2 md:px-6 py-2 md:py-3 font-semibold bg-japonica-400 text-japonica-950">Subscribe</button>
                 </form>
+                <p id="subscribe-response" class="py-2 text-red-500 italic text-sm"></p>
             </div>
         </div>
     </div>
@@ -35,12 +33,12 @@
             <h1 class=" mb-2 uppercase text-japonica-500">Featured Poem</h1>
             <article class="w-full max-w-2xl">
                 <h1 class="mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl ">
-                    <?=ucwords($featured_poem->title)?></h1>
+                    <?= ucwords($featured_poem->title) ?></h1>
 
                 <a href="#" rel="author" class="text-sm font-bold text-japonica-900 uppercase">by
-                    <?=$featured_poem->author?></a>
+                    <?= $featured_poem->author ?></a>
                 <div class="prose md:mt-4 mt-2 lead text-japonica-950">
-                  <?=htmlspecialchars_decode($featured_poem->body)?>
+                    <?= htmlspecialchars_decode($featured_poem->body) ?>
                 </div>
 
             </article>
@@ -51,21 +49,20 @@
             <?php $i = 1; ?>
             <?php foreach ($poems as $poem) : ?>
 
-            <article>
-                <div class="md:my-2 inline-flex items-center">
-                    <div class="mr-3 grid grid-cols-1 justify-items-center bg-japonica-100 w-12 rounded-md">
-                        <div class='md:text-3xl text-2xl text-asparagus-900'>0<?= $i ?></div>
-                    </div>
-                    <div>
-                        <a href="/poems/<?= $poem->id ?>" rel="author"
-                            class="text-xl font-bold text-asparagus-900"><?=ucwords($poem->title);?></a>
-                        <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by
-                            <?=$poem->author;?>
-                        </p>
+                <article>
+                    <div class="md:my-2 inline-flex items-center">
+                        <div class="mr-3 grid grid-cols-1 justify-items-center bg-japonica-100 w-12 rounded-md">
+                            <div class='md:text-3xl text-2xl text-asparagus-900'>0<?= $i ?></div>
+                        </div>
+                        <div>
+                            <a href="/poems/<?= $poem->id ?>" rel="author" class="text-xl font-bold text-asparagus-900"><?= ucwords($poem->title); ?></a>
+                            <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by
+                                <?= $poem->author; ?>
+                            </p>
 
+                        </div>
                     </div>
-                </div>
-            </article><?php $i++; ?>
+                </article><?php $i++; ?>
             <?php endforeach ?>
 
         </div>
@@ -75,22 +72,20 @@
 </section>
 
 <!-- Categories -->
-<section
-    class="bg-asparagus-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
+<section class="bg-asparagus-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <h1 class="mb-2 uppercase text-japonica-500">Most viewed categories</h1>
 
     <div class="grid md:grid-cols-4 grid-cols-2 gap-3">
         <?php for ($i = 0; $i < 4; $i++) : ?>
 
-        <div class="mx-auto mt-6 w-40  overflow-hidden">
-            <img class="md:h-56 h-48 w-full object-cover object-center"
-                src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png" />
-            <div class="mt-2">
-                <a href="#" rel="author" class="mb-2 text-xl font-bold text-gray-900">Hate</a>
-                <p class="mb-2 text-sm font-light text-gray-500 dark:text-gray-400 italic">12 items
-        </p>
+            <div class="mx-auto mt-6 w-40  overflow-hidden">
+                <img class="md:h-56 h-48 w-full object-cover object-center" src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png" />
+                <div class="mt-2">
+                    <a href="#" rel="author" class="mb-2 text-xl font-bold text-gray-900">Hate</a>
+                    <p class="mb-2 text-sm font-light text-gray-500 dark:text-gray-400 italic">12 items
+                    </p>
+                </div>
             </div>
-        </div>
         <?php endfor; ?>
     </div>
 

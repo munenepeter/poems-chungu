@@ -1,10 +1,8 @@
- 
-
-/**
- * 
- * form submission
- */
-let loadingBtn = `
+ /**
+  * 
+  * form submission
+  */
+ let loadingBtn = `
  <svg aria-hidden="true" role="status" class="inline w-4 h-4 mr-3 text-gray-200 animate-spin dark:text-gray-600"
     viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -16,29 +14,42 @@ let loadingBtn = `
 </svg>
 Subscribing...
 `;
-const subscribeForm = document.getElementById("subscribe-form");
-const subscribeButton = document.getElementById("subscribeBtn");
 
-subscribeForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+ let FailedBtn = `
+<svg aria-hidden="true" role="status" class="inline w-4 h-4 mr-3 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>Failed
+`;
 
-    subscribeButton.classList.add("inline-flex", "items-center");
-    subscribeButton.innerHTML = loadingBtn;
+ const subscribeForm = document.getElementById("subscribe-form");
+ const subscribeButton = document.getElementById("subscribeBtn");
+ const subcribeResult = document.getElementById("subscribe-response");
+ const subcribeInput = document.getElementById("subscribe-input");
 
-    const formData = new FormData(subscribeForm);
+ subscribeForm.addEventListener("submit", (e) => {
+     e.preventDefault();
 
-    const url = "subscribe";
-    axios
-        .post(url, formData, {
-            headers: {
-                "Content-Type": "multipart/form-data",
-            },
-        })
-        .then((res) => {
-            console.log(res);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+     subscribeButton.classList.add("inline-flex", "items-center");
+     subscribeButton.innerHTML = loadingBtn;
+     subscribeButton.setAttribute("disabled", "");
 
-});
+     const formData = new FormData(subscribeForm);
+
+     const url = "subscribe";
+     axios
+         .post(url, formData, {
+             headers: {
+                 "Content-Type": "multipart/form-data",
+             },
+         })
+         .then((res) => {
+             console.log(res);
+         })
+         .catch((err) => {
+             console.log(err);
+             subscribeButton.innerHTML = FailedBtn;
+             subcribeResult.innerHTML = err.response.data;
+             subcribeInput.classList.add("border", "border-red-500");
+         });
+
+ });

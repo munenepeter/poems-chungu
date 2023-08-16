@@ -17,11 +17,11 @@ class SubscribersController extends Controller {
         $subscriber = request('subscriber');
 
         if (!filter_var($subscriber, FILTER_VALIDATE_EMAIL)) {
-            return $this->json("Oops, you can't subscribe with a temporary email address", 200);
+            return $this->json("Oops, you can't subscribe with a temporary email address", 422);
         }
 
         if($this->checkDisposableEmail($subscriber) !== ""){
-            return $this->json($this->checkDisposableEmail($subscriber), 200);
+            return $this->json($this->checkDisposableEmail($subscriber), 422);
         }
 
         return $this->json(request()->all());
