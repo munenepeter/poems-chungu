@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./Views/*/*.php",
     "./Views/*.php",
+    "./static/js/*.js",
   ],
   theme: {
     extend: {

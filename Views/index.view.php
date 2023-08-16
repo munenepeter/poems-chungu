@@ -20,7 +20,7 @@
                         focus:border-asparagus-500 focus:ring-asparagus-500 focus:ring-1' placeholder='Enter your email' name="subscriber" required />
                     <button id="subscribeBtn" type="submit" class="ml-1 px-2 md:px-6 py-2 md:py-3 font-semibold bg-japonica-400 text-japonica-950">Subscribe</button>
                 </form>
-                <p id="subscribe-response" class="py-2 text-red-500 italic text-sm"></p>
+                <p id="subscribe-response" class="py-2 text-red-300 text-sm"></p>
             </div>
         </div>
     </div>
