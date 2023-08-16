@@ -16,12 +16,12 @@
                     unsubsribe anytime. Read more about us</p>
 
                 <div class='flex sm:flex-row md:p-0'>
-                    <input
-                        class='px-2 md:px-8 py-2 md:py-3 md:text-lg transition-all duration-300 focus:outline-none
+                    <input class='px-2 md:px-8 py-2 md:py-3 md:text-lg transition-all duration-300 focus:outline-none
                         bg-asparagus-50 text-asparagus-950 placeholder:text-asparagus-950
                         focus:border-asparagus-500 focus:ring-asparagus-500 focus:ring-1'
                         placeholder='Enter your email' type="text" />
-                    <button class='ml-1 px-2 md:px-6 py-2 md:py-3 font-semibold bg-japonica-400 text-japonica-950'>Subscribe</button>
+                    <button
+                        class='ml-1 px-2 md:px-6 py-2 md:py-3 font-semibold bg-japonica-400 text-japonica-950'>Subscribe</button>
                 </div>
             </div>
         </div>
@@ -30,14 +30,15 @@
 
 <!-- Latest poems -->
 <section class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
-    <div class="md:grid md:grid-cols-6 md:gap-4 gap-2 mx-auto">
-        <h1 class=" mb-2 uppercase text-japonica-500">Latest Poems</h1>
-        <div class="md:-ml-16 font-medium md:col-span-3 p-2 mb-2">
-
+    <div class="container md:flex md:justify-around mx-auto">
+    
+        <div class="font-medium col-span-2 p-2 mb-2">
+            <h1 class=" mb-2 uppercase text-japonica-500">Featured Poem</h1>
             <article class="w-full max-w-2xl">
-                <h1 class="mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl ">L.O.V.E</h1>
+                <h1 class="mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl ">L.O.V.E
+                </h1>
 
-                <a href="#" rel="author" class="text-md font-bold text-japonica-900 italic">by munenepeter</a>
+                <a href="#" rel="author" class="text-sm font-bold text-japonica-900 uppercase">by munenepeter</a>
                 <p class="md:mt-4 mt-2 lead text-japonica-950"> It is like a magical river</p>
                 <p>Like a mystery rhyme</p>
                 <p>That can last forever</p>
@@ -53,23 +54,25 @@
             </article>
         </div>
 
-        <div class="md:ml-10 col-span-2 md:border-none border-t md:py-0 py-4">
+        <div class="col-span-2 md:border-none border-t md:py-0 py-4">
+            <h1 class="mb-2 uppercase text-japonica-500">Latest Poems</h1>
+            <?php for ($i = 1; $i < 7; $i++) : ?>
 
-            <?php for ($i=1; $i < 6; $i++):?>
+            <article>
+                <div class="md:my-2 inline-flex items-center">
+                    <div class="mr-3 grid grid-cols-1 justify-items-center bg-japonica-100 w-12 rounded-md">
+                        <div class='md:text-3xl text-2xl text-asparagus-900'>0<?= $i ?></div>
+                    </div>
+                    <div>
+                        <a href="#" rel="author" class="text-xl font-bold text-asparagus-900">Hate is
+                            nature</a>
+                        <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by peter munene
+                        </p>
 
-            <div class="md:my-2 inline-flex items-center">
-                <div class="mr-3 grid grid-cols-1 justify-items-center bg-japonica-100 w-12 rounded-md">
-                    <div class='md:text-3xl text-2xl text-asparagus-900'>0<?=$i?></div>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" rel="author" class="text-xl font-bold text-asparagus-900">Hate is
-                        nature</a>
-                    <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by peter munene
-                    </p>
-
-                </div>
-            </div>
-            <?php endfor?>
+            </article>
+            <?php endfor ?>
 
         </div>
 
@@ -78,11 +81,12 @@
 </section>
 
 <!-- Categories -->
-<section class="bg-asparagus-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
+<section
+    class="bg-asparagus-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <h1 class="mb-2 uppercase text-japonica-500">Most viewed categories</h1>
 
     <div class="grid md:grid-cols-4 grid-cols-2 gap-3">
-        <?php for ($i=0; $i < 4 ; $i++) :?>
+        <?php for ($i = 0; $i < 4; $i++) : ?>
         <div class="mx-auto mt-6 w-40  overflow-hidden">
             <img class="md:h-56 h-48 w-full object-cover object-center"
                 src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png" />

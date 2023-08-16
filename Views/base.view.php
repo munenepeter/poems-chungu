@@ -6,13 +6,10 @@
     <title>Chungu Poems</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#799649" />
-    <meta name="description"
-        content="Discover the soulful world of poetry at Chungu Poems. Immerse yourself in heartfelt verses that touch upon love, life, and everything in between. Explore and let our words resonate with your heart's emotions." />
+    <meta name="description" content="Discover the soulful world of poetry at Chungu Poems. Immerse yourself in heartfelt verses that touch upon love, life, and everything in between. Explore and let our words resonate with your heart's emotions." />
 
     <link rel="icon" href="<?php asset("imgs/favicon/norm-favicon.svg") ?>" type="image/svg">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
-        integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,10 +23,11 @@
             font-family: 'EB Garamond', serif;
         }
 
-        /* .bg-asparagus-500 {
+        .bg-asparagus-500 {
             background-color: #799649 !important;
         }
 
+        /*
         .text-asparagus-500 {
             color: #799649;
         } */
