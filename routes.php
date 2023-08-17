@@ -7,6 +7,8 @@ $router->get('auth/login', 'AuthController@index');
 $router->post('auth/login', 'AuthController@login');
 $router->post('auth/logout', 'AuthController@signout');
 
+$router->get('poems/{id}', 'PoemsController@show');
+
 $router->get('admin/poems', 'PoemsController@index');
 $router->post('admin/poems/create', 'PoemsController@create');
 
