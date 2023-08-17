@@ -50,7 +50,7 @@ include_once 'sections/nav.view.php';
                                                                              </button>
                                                                       </div>
                                                                       <!-- Modal body -->
-                                                                      <form action="/dashboard/poems/create" method="post">
+                                                                      <form action="/admin/poems/create" method="post">
                                                                              <div class="grid gap-4 mb-4 sm:grid-cols-2">
                                                                                     <div>
                                                                                            <label for="title" class="block mb-2 text-sm font-medium text-asparagus-900 dark:text-white">Title</label>
