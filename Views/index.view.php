@@ -32,8 +32,8 @@
         <div class="font-medium col-span-2 p-2 mb-2">
             <h1 class=" mb-2 uppercase text-japonica-500">Featured Poem</h1>
             <article class="w-full max-w-2xl">
-                <h1 class="mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl ">
-                    <?= ucwords($featured_poem->title) ?></h1>
+                <a href="/poems/<?= $featured_poem->id ?>" class="block mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl hover:underline">
+                    <?= ucwords($featured_poem->title) ?></a>
 
                 <a href="#" rel="author" class="text-sm font-bold text-japonica-900 uppercase">by
                     <?= $featured_poem->author ?></a>
@@ -55,7 +55,7 @@
                             <div class='md:text-3xl text-2xl text-asparagus-900'>0<?= $i ?></div>
                         </div>
                         <div>
-                            <a href="/poems/<?= $poem->id ?>" rel="author" class="text-xl font-bold text-asparagus-900"><?= ucwords($poem->title); ?></a>
+                            <a href="/poems/<?= $poem->id ?>" rel="author" class="text-xl font-bold text-asparagus-900 hover:underline"><?= ucwords($poem->title); ?></a>
                             <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by
                                 <?= $poem->author; ?>
                             </p>

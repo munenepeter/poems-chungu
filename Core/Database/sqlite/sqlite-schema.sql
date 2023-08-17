@@ -40,3 +40,16 @@ CREATE TABLE subscribers (
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+
+//
+Sacrificial Love
+Survival
+Nature
+Pursuit of Love
+Power and Corruption
+Loneliness
+Justice
+Family
+Circle of Life
+Pursuit of Love
