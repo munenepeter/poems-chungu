@@ -10,12 +10,27 @@ use Chungu\Core\Mantle\App; ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/../static/imgs/favicon/error-favicon.svg" type="image/svg">
-    <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="<?= asset('css/output.css') ?>">
     <title>Error <?= $code; ?></title>
 </head>
+
+
+
+<div class='flex items-center justify-center min-h-screen from-japonica-500 via-greeen-300 to-asparagus-500 bg-gradient-to-br'>
+    <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl'>
+        <div class='max-w-md mx-auto space-y-6'>
+
+            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                <div class="mx-auto max-w-screen-sm text-center">
+                    <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">500</h1>
+                    <p class="mb-4 text-3xl tracking-tight font-bold text-black md:text-4xl">Internal Server Error.</p>
+                    <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">We are already working to solve the problem. </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <body>
     <div class="grid place-items-center h-screen">
