@@ -2,103 +2,80 @@
 
 namespace Chungu\Core\Mantle;
 
-
 class Router {
-    public $routes = [
+
+    protected $routes = [
         'GET' => [],
         'POST' => []
     ];
 
     public static function load($file) {
-
         $router = new static;
         require $file;
         return $router;
     }
 
-    public function get($uri, $controller) {
-
-
-        $uri = preg_replace('/{[^}]+}/', '(.+)', $uri);
-        $this->routes['GET'][$uri] = $controller;
+    public function __call($method, $arguments) {
+        if (in_array($method, ['get', 'post'], true)) {
+            [$uri, $controller] = $arguments;
+            $this->addRoute(strtoupper($method), $uri, $controller);
+        }
     }
 
-    public function post($uri, $controller) {
-        $uri = preg_replace('/{[^}]+}/', '(.+)', $uri);
-        $this->routes['POST'][$uri] = $controller;
+    protected function addRoute($requestType, $uri, $controller) {
+        $uri = $this->prepareUri($uri);
+        $this->routes[$requestType][$uri] = $controller;
     }
-    
 
+    protected function prepareUri($uri) {
+        return preg_replace('/{[^}]+}/', '([^\/]+)', $uri);
+    }
 
     public function direct($uri, $requestType) {
-
-        /*
-        ---- DON'T KNOW WHY IT DOES NOT WORK, THIS WAS PLACED HERE FOR TEST PURPOSES!!!---
-        
-        if (!array_key_exists($uri, $this->routes[$requestType])) {
-            throw new \Exception("Oops, you forgot to include <b>/{$uri}</b>, There is no such route! ", 404);
-            exit;
-        }
-        */
-      
-        $params = [];
-        $regexUri = '';
-        //  dd($this->routes[$requestType]);
-        foreach ($this->routes[$requestType] as $route => $controller) {
-            if (preg_match("%^{$route}$%", $uri, $matches) === 1) {
-                //echo($uri.'--->'.$controller.'<br>');   
-                $regexUri = $route;
-                $this->routes[$requestType][$regexUri] = $controller;
-
-                unset($matches[0]);
-                $params = $matches;
-                break;
+        $routes = $this->routes[$requestType];
+        foreach ($routes as $route => $controller) {
+            if (preg_match("#^{$route}$#", $uri, $matches)) {
+                array_shift($matches); // Remove the full match
+                $this->callAction($controller, ...$matches);
+                return;
             }
         }
-
-        if(empty($this->routes[$requestType][$regexUri])){
-            logger("Error", "Router: There is no route to handle <b>". strtoupper($requestType)." /{$uri}</b>");
-            throw new \Exception("There is no route to handle <b>". strtoupper($requestType)." /{$uri}</b>", 404);
-        }
-        if (is_callable($this->routes[$requestType][$regexUri])) {
-            $this->routes[$requestType][$regexUri](...$params);
-        } else {
-
-            if (!empty($regexUri) && $regexUri !== "") {
-                return $this->callAction(
-                    $params,
-                    ...explode('@', $this->routes[$requestType][$regexUri])
-                );
-            } elseif (!array_key_exists($uri, $this->routes[$requestType])) {
-                logger("Error", "Router: There is no route to handle <b>". strtoupper($requestType)." /{$uri}</b> ");
-                throw new \Exception("There is no route to handle <b>". strtoupper($requestType)." /{$uri}</b>", 404);
-            } else {
-                return $this->callAction(
-                    $params,
-                    ...explode('@', $this->routes[$requestType][$uri])
-                ); 
-            }
-            
-        }
+        $this->handleNotFound($uri, $requestType);
     }
-    protected function callAction($params, $controller, $action) {
 
-        $controller = "Chungu\\Controllers\\{$controller}";
+    protected function callAction($controller, ...$params) {
+        [$controllerName, $action] = explode('@', $controller);
+        $controllerName = "Chungu\\Controllers\\$controllerName";
 
-        if (!class_exists($controller)) {
-            logger("Debug", "Router: Class $controller doesn't not exist!");
-            throw new \Exception("Class <b>$controller</b> doesn't not exist!", 500);
+        if (class_exists($controllerName)) {
+            $controllerInstance = new $controllerName();
+            if (method_exists($controllerInstance, $action)) {
+                $controllerInstance->$action(...$params);
+                return;
+            }
         }
 
-        $controller = new $controller;
+        $this->handleActionNotFound($controllerName, $action);
+    }
 
-        $name = get_class($controller);
+    protected function handleNotFound($uri, $requestType) {
+        $message = "There is no route to handle " . strtoupper($requestType) . " /{$uri}";
+        logger("Debug", $message);
+        $this->abortWithError($message, 404);
+    }
 
-        if (!method_exists($controller, $action)) {
-            logger("Debug", "Router: {$name} doesn't not respond to {$action} Method!");
-            throw new \Exception("{$name} doesn't not respond to {$action} Method!", 500);
-        }
+    protected function handleActionNotFound($controller, $action) {
+        $message = "$controller does not respond to $action Method!";
+       // logger("Debug", $message);
+        $this->abortWithError($message, 500);
+    }
 
-        return $controller->$action(...$params);
+    protected function abortWithError($message, $code) {
+        http_response_code($code);
+        view('_error', [
+            'code' => $code,
+            'message' => $message
+        ]);
+        exit;
     }
 }

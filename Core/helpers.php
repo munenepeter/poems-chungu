@@ -90,7 +90,7 @@ function abort($message, $code) {
         http_response_code($code);
     }
     //logger("Error", "Exception: $message");
-    view('error', [
+    view('_error', [
         'code' => $code,
         'message' => $message
     ]);

@@ -4,3 +4,4 @@ composer.phar
 /.vscode/
 /vendor/
 /Core/Mantle/Logs/logs.log
+/Core/Mantle/Cache/

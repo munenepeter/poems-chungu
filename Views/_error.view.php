@@ -14,7 +14,7 @@ use Chungu\Core\Mantle\App; ?>
     <title>Error <?= $code; ?></title>
 </head>
 <body>
-    <div class="grid place-items-center h-screen">
+    <div class="grid place-items-center h-screen bg-gray-300">
 
         <div class="space-y-4 text-center">
             <?php if (ENV === 'development') : ?>
