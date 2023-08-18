@@ -30,11 +30,7 @@ class Logger {
             "description" => nl2br($msg)
         ];
         self::$logBuffer[] = json_encode($log);
-
-        // Optionally, limit the buffer size before writing
-        if (count(self::$logBuffer) >= 10) {
-            self::writeBufferToFile();
-        }
+        self::writeBufferToFile();
     }
 
     protected static function getUserInfo() {

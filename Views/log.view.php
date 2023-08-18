@@ -3,8 +3,6 @@ include_once 'base.view.php';
 include_once 'sections/nav.view.php';
 
 $all = implode(",", $logs);
-
-
 ?>
 <div class="bg-gray-100 mt-12 rounded-md">
 
@@ -141,7 +139,7 @@ $all = implode(",", $logs);
                            ?>
                             <td class="<?=$classes?>" colspan="4">
                                 #
-                                <?= $count; ?><br>
+                                <?= $log->id ?? $count; ?><br>
                                 <b>*Message*</b> <i>
                                     <?= $log->description; ?>
                                 </i><br>

@@ -60,17 +60,16 @@ class Router {
 
     protected function handleNotFound($uri, $requestType) {
         $message = "There is no route to handle " . strtoupper($requestType) . " /{$uri}";
-        logger("Debug", $message);
         $this->abortWithError($message, 404);
     }
 
     protected function handleActionNotFound($controller, $action) {
         $message = "$controller does not respond to $action Method!";
-       // logger("Debug", $message);
         $this->abortWithError($message, 500);
     }
 
     protected function abortWithError($message, $code) {
+        logger("Debug", $message);
         http_response_code($code);
         view('_error', [
             'code' => $code,

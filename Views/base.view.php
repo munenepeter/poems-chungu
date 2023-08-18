@@ -16,8 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-    <script defer src="<?= asset('js/index.js') ?>"></script>
-
+    <?php if (!str_contains($_SERVER['REQUEST_URI'], ':system') || str_contains($_SERVER['REQUEST_URI'], 'admin')) : ?>
+        <script defer src="<?= asset('js/index.js') ?>"></script>
+    <?php endif; ?>
     <link rel="stylesheet" href="<?= asset('css/output.css') ?>">
     <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/flowbite.min.css" />
     <style>
