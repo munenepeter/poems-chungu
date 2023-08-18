@@ -76,17 +76,17 @@
     <h1 class="mb-2 uppercase text-japonica-500">Most viewed categories</h1>
 
     <div class="grid md:grid-cols-4 grid-cols-2 gap-3">
-        <?php for ($i = 0; $i < 4; $i++) : ?>
+        <?php foreach ($categories as $category) : ?>
 
             <div class="mx-auto mt-6 w-40  overflow-hidden">
-                <img class="md:h-56 h-48 w-full object-cover object-center" src="https://design4users.com/wp-content/uploads/2020/02/love-illustrations.png" />
+                <img class="md:h-56 h-48 w-full object-cover object-center" src="https://dummyimage.com/200x400/f2bbaf/799649&text=<?= $category->name; ?>" />
                 <div class="mt-2">
-                    <a href="#" rel="author" class="mb-2 text-xl font-bold text-gray-900">Hate</a>
+                    <a href="#" class="mb-2 text-xl font-bold text-gray-900"> <?= $category->name; ?></a>
                     <p class="mb-2 text-sm font-light text-gray-500 dark:text-gray-400 italic">12 items
                     </p>
                 </div>
             </div>
-        <?php endfor; ?>
+        <?php endforeach; ?>
     </div>
 
 </section>

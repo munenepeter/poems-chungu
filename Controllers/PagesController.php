@@ -4,6 +4,7 @@ namespace Chungu\Controllers;
 
 use Chungu\Models\Poem;
 use Chungu\Controllers\Controller;
+use Chungu\Models\Category;
 
 class PagesController extends Controller {
 
@@ -16,7 +17,10 @@ class PagesController extends Controller {
         $latestpoems = array_slice($poems, 0, 5);
         $featured_poem = $poems[array_rand($poems)];
 
-        return view('index',[
+        $categories = array_slice(Category::all(), 0, 4);
+
+        return view('index', [
+            'categories' => $categories,
             'poems' => $latestpoems,
             'featured_poem' => $featured_poem
         ]);
