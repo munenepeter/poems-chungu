@@ -1,4 +1,4 @@
-<footer class="fixed bottom-0 left-0 w-full z-10" style=" background-image: linear-gradient(135deg, rgb(152, 179, 104) 0%, rgb(74, 93, 46) 100%);">
+<footer class="  bottom-0 left-0 w-full z-10" style=" background-image: linear-gradient(135deg, rgb(152, 179, 104) 0%, rgb(74, 93, 46) 100%);">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span class="text-sm text-japonica-100 text-center ">&copy; 2020 -
             <?= date("Y") ?> <a href="https://dev.chungu.co.ke" class="hover:underline">Chungu Developers</a>. All
