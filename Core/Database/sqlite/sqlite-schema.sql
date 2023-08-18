@@ -55,6 +55,28 @@ CREATE TABLE categories (
   updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE categories
+ADD COLUMN img TEXT;
+
+CREATE TRIGGER set_default_img AFTER INSERT ON categories
+BEGIN
+  UPDATE categories
+  SET img = 'https://dummyimage.com/500x400/f2bbaf/799649&text=' || NEW.name
+  WHERE id = NEW.id;
+END;
+
+INSERT INTO categories (name) VALUES
+  ('undefined'),
+  ('sacrificial love'),
+  ('survival'),
+  ('nature'),
+  ('power and corruption'),
+  ('loneliness'),
+  ('justice'),
+  ('family'),
+  ('circle of life'),
+  ('pursuit of love');
+
 
 CREATE TABLE subscribers (
   id INTEGER PRIMARY KEY AUTOINCREMENT,

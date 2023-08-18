@@ -7,16 +7,6 @@ use Chungu\Core\Mantle\Request;
 //require the main file joining all the parts of the app
 require 'Core/bootstrap.php';
 
-
-$poem = new Poem();
-
-var_dump($poem->category());
-
-
-die;
-
-
-
 //Try to load the routes, direct the URI and check the request method
  try {
 
