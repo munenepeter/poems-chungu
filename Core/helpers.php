@@ -222,7 +222,10 @@ function delete_file(string $path) {
     }
 }
 
-
+function class_basename($class) {
+    $class = is_object($class) ? get_class($class) : $class;
+    return basename(str_replace('\\', '/', $class));
+}
 function downloadFile($dir, $file) {
 
     if (file_exists($file . "uuj")) {

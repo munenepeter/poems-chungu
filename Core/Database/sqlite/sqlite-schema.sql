@@ -26,6 +26,28 @@ CREATE TABLE poems (
   updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+
+CREATE TABLE poems_new (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL UNIQUE,
+  author_id INTEGER NOT NULL,
+  body TEXT NOT NULL,
+  category_id INTEGER DEFAULT 1,
+  status BOOLEAN DEFAULT 0,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (author_id) REFERENCES authors(id),
+  FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+INSERT INTO poems_new (title, author_id, body, created_at, updated_at)
+SELECT title, (SELECT id FROM authors WHERE authors.name = poems.author), body, created_at, updated_at
+FROM poems;
+
+DROP TABLE poems;
+ALTER TABLE poems_new RENAME TO poems;
+
+
 CREATE TABLE categories (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL UNIQUE,
@@ -42,14 +64,24 @@ CREATE TABLE subscribers (
 );
 
 
-//
-Sacrificial Love
-Survival
-Nature
-Pursuit of Love
-Power and Corruption
-Loneliness
-Justice
-Family
-Circle of Life
-Pursuit of Love
+CREATE TABLE authors (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO authors (name, created_at, updated_at) VALUES ('munenepeter', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+
+-- undefined
+-- Sacrificial Love
+-- Survival
+-- Nature
+-- Pursuit of Love
+-- Power and Corruption
+-- Loneliness
+-- Justice
+-- Family
+-- Circle of Life
+-- Pursuit of Love

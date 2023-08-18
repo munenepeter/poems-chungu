@@ -5,6 +5,8 @@ namespace Chungu\Models;
 use Chungu\Core\Mantle\App;
 
 class Model {
+
+    protected $primaryKey = 'id';
     public function __get($name) {
         return $name;
     }
@@ -96,38 +98,44 @@ class Model {
         //User::query(Select ,, form , ); 
     }
     /**
-     * Model::find
+     * find
      * 
      * Selects every where an id matches the one given
      * 
      * @param int $id the id of the column to be selected
-     * 
-     * @example 
-     * <code>
-     *    Model::where(['id', 'name','slug'], ['id', 90]);
-     * </code>
-     * 
      * 
      * @return \Chungu\Models\Model;
      */
     public static function find($id) {
 
         $item =  App::get('database')->selectAllWhereID(static::tableName(), $id);
-        //User::find(1); return a user with the id of 1
+        
         if (empty($item)) {
             throw new \Exception(message: "There is no results for your query!", code: 404);
         }
         return $item[0];
     }
-    public function belongsTo($class) {
-        // I have no idea to implement relations
-        //return a join 
-        // $child = static::tableName();
-        // $owner = substr($class, strrpos($class, '\\') + 1);
 
-        // $products = array_map(function ($owner) {
-        //     $owner->category = $owner::find($products->category_id);
-        //     return $products;
-        // }, $class::all());
+
+    public function belongsTo($relatedModelClass, $foreignKey = null) {
+        $foreignKey = $foreignKey ?: $this->getForeignKey($relatedModelClass);
+
+        // Fetch the related model based on the foreign key value
+        return $relatedModelClass::find($this->$foreignKey);
+    }
+
+    public function hasMany($relatedModelClass, $foreignKey = null) {
+        $foreignKey = $foreignKey ?: $this->getForeignKey();
+
+        // Fetch all related models that have the foreign key matching this model's primary key
+        return $relatedModelClass::where($foreignKey, $this->{$this->primaryKey})->get();
+    }
+
+    protected function getForeignKey($relatedModelClass = null) {
+        if (!$relatedModelClass) {
+            $relatedModelClass = get_called_class();
+        }
+
+        return strtolower(class_basename($relatedModelClass)) . '_' . $this->primaryKey;
     }
 }
