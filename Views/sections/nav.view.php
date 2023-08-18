@@ -75,7 +75,7 @@
               class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50 md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500">About</a>
           </li>
           <li>
-            <a href="#"
+            <a href="/poems"
               class="md:text-base text-xs block py-2 pl-1 md:pl-3 pr-2 md:pr-4 text-japonica-50 md:hover:bg-transparent md:hover:text-japonica-500 md:p-0 md:dark:hover:text-japonica-500">Poems</a>
           </li>
           <li>

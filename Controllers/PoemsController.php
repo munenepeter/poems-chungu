@@ -52,4 +52,12 @@ class PoemsController extends Controller {
             'poem' => $poem
         ]);
     }
+
+    public function all() {
+        $poems = Poem::all();
+
+        return view('poems', [
+            'poems' => $poems
+        ]);
+    }
 }
