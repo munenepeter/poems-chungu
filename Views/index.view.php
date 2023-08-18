@@ -57,7 +57,7 @@
                         <div>
                             <a href="/poems/<?= $poem->id ?>" rel="author" class="text-xl font-bold text-asparagus-900 hover:underline"><?= ucwords($poem->title); ?></a>
                             <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by
-                                <?= $poem->author; ?>
+                                <?= $poem->author()->name; ?>
                             </p>
 
                         </div>

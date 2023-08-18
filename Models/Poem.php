@@ -6,7 +6,11 @@ class Poem extends Model {
 
 
     public function category() {
-        return $this->belongsTo(Category::class, 'category_id'); // Assuming 'category_id' is the foreign key in the 'poems' table
+        return $this->belongsTo(Category::class, 'category_id'); 
+    }
+
+    public function author() {
+        return $this->belongsTo(Author::class, 'author_id');
     }
 
 }
