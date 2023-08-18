@@ -13,6 +13,7 @@ class Logger {
     public static function log(string $level, string $msg) {
         $userinfo = self::getUserInfo();
         $log = [
+            'id' => md5(time()),
             'level' => $level,
             'time' => date("D, d M Y H:i:s"),
             "more" => [

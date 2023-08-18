@@ -13,23 +13,30 @@ use Chungu\Core\Mantle\App; ?>
     <link rel="stylesheet" href="<?= asset('css/output.css') ?>">
     <title>Error <?= $code; ?></title>
 </head>
-<body>
-    <div class="grid place-items-center h-screen bg-gray-300">
 
-        <div class="space-y-4 text-center">
-            <?php if (ENV === 'development') : ?>
-                <h2 class="text-4xl text-purple-700"><?= $code; ?></h2>
-                <p class="mb-4"><?= ucwords($message); ?></p>
-            <?php endif; ?>
-            <?php if (ENV === 'production') : ?>
+<body>
+    <div class="grid place-items-center h-screen bg-asparagus-300">
+        <div class="m-2 min-w-[50%] shadow-md rounded-md">
+            <div class="p-4 bg-asparagus-100">
                 <?php
                 $errors = App::get('config')['codes'][$code];
                 ?>
-                <h2 class="text-4xl"><?= $errors[0]; ?></h2>
-                <p><?= $errors[1]; ?></p>
-            <?php endif; ?>
 
-            <a onclick="history.back()" class="text-blue-500 m-4 hover:underline cursor-pointer">Go Back</a>
+                <h2 class="text-4xl py-2 text-japonica-500"><?= $errors[0]; ?></h2>
+                <p class="text-asparagus-700"><?= $errors[1]; ?></p>
+
+                <p class="text-asparagus-400"><?= date("D, d M Y H:i:s") ?></p>
+            </div>
+            <div class="bg-white p-4">
+                <p class="mb-2 font-semibold">What happened?</p>
+
+                <p class="pb-4 text-sm"><?= (ENV === 'development') ? $message : $errors[1]; ?></p>
+
+
+                <p>Your IP: <span class="text-xs text-blue-600"> <?= $_SERVER['REMOTE_ADDR'] ?></span></p>
+
+                <p>Log ID: <span class="text-xs text-blue-600"><?= md5(time()) ?></span></p>
+            </div>
 
         </div>
     </div>
