@@ -15,9 +15,9 @@ use Chungu\Core\Mantle\App; ?>
 </head>
 
 <body>
-    <div class="grid place-items-center h-screen bg-asparagus-300">
-        <div class="m-2 min-w-[50%] shadow-md rounded-md">
-            <div class="p-4 bg-asparagus-100">
+    <div class="grid place-items-center h-screen bg-japonica-50">
+        <div class="m-2 min-w-[50%] shadow-lg rounded-md">
+            <div class="p-4 bg-asparagus-50">
                 <?php
                 $errors = App::get('config')['codes'][$code];
                 ?>
