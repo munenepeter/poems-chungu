@@ -4,16 +4,13 @@ namespace Chungu\Controllers;
 
 use Chungu\Controllers\Controller;
 
-class SystemController extends Controller
-{
+class SystemController extends Controller {
 
     private $logFile = "Core/Mantle/Logs/logs.log";
-    public function __construct()
-    {
+    public function __construct() {
         //   $this->middleware('auth');
     }
-    public function index()
-    {
+    public function index() {
 
         if (!file_exists($this->logFile)) {
             $newLogFile = fopen($this->logFile, "w") or die("Unable to open file!");
@@ -33,8 +30,7 @@ class SystemController extends Controller
         ]);
     }
 
-    public function deleteLogs()
-    {
+    public function deleteLogs() {
         $this->json("Deleting Logs...");
         if (request('_delete_logs') !== md5(session_get('email'))) {
             logger("Warning", "System: Someone is trying to force delete logs" . session_get('email'));
@@ -43,8 +39,7 @@ class SystemController extends Controller
         $this->actuallyDeleteLogs();
     }
 
-    public function actuallyDeleteLogs()
-    {
+    public function actuallyDeleteLogs() {
 
         if (!file_exists($this->logFile)) {
             $newLogFile = fopen($this->logFile, "w") or die("Unable to open file!");
@@ -54,21 +49,19 @@ class SystemController extends Controller
         }
 
         //delete the file and create a new one
-        if(!unlink($this->logFile)){
+        if (!unlink($this->logFile)) {
             logger("Debug", "System: Couldn't delete the logs!");
             $this->json("Unable to delete", 500);
         }
         //recreate the file
         $newLogFile = fopen($this->logFile, "w") or die("Unable to open file!");
 
-        logger("Info", "System: Logs have been deleted by ". session_get('email'));
+        logger("Info", "System: Logs have been deleted by " . session_get('email'));
 
         fclose($newLogFile);
 
         $this->json("Logs Deleted");
 
         return;
-
     }
-
 }
