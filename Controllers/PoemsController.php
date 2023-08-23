@@ -49,7 +49,7 @@ class PoemsController extends Controller {
 
         $this->json('success', 200);
 
-        redirect('/dashboard/poems');
+        redirect('/admin/poems');
     }
 
     public function show($id) {
