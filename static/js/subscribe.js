@@ -58,6 +58,6 @@ subscribeForm.addEventListener("submit", (e) => {
         subscribeButton.toggleAttribute("disabled");
         subcribeInput.classList.remove("border", "border-red-500");
         subscribeForm.reset();
-    }, 2000);
+    }, 5000);
 
 });
