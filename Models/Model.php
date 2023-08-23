@@ -75,7 +75,7 @@ class Model {
      * @param array $condition The condition to be fulfiled by the where clause
      * 
      * @example 
-     * Model::where(['id', 'name','slug'], ['id', 90]);
+     * ::where(['id', 'name','slug'], ['id', 90]);
      * 
      * @return \Chungu\Models\Model;
      */
@@ -83,19 +83,25 @@ class Model {
         //Returns all the records in the db for a certain  model/table
 
         return  App::get('database')->selectWhere(static::tableName(), $columns, $condition);
-        //User::where(['id', 'name','slug'], ['id', 90]); -> return id, name & slug where the id is 90
+        //::where(['id', 'name','slug'], ['id', 90]); -> return id, name & slug where the id is 90
     }
     public static function query(string $sql) {
         //Returns all the records in the db for a certain  model/table
 
         return  App::get('database')->query($sql);
-        //User::query(Select ,, form , ); 
+        //::query(Select ,, form , ); 
     }
     public static function count(array $condition) {
         //Returns all the records in the db for a certain  model/table
 
         return  App::get('database')->count(static::tableName(), $condition)[0]->count;
-        //User::query(Select ,, form , ); 
+        //::query(Select ,, form , ); 
+    }
+    public static function findBy($column, $value) {
+        //Returns all the records in the db for a certain  model/table
+
+        return  App::get('database')->selectAllWhere(static::tableName(), $column, $value);
+        //::query(Select ,, form , ); 
     }
     /**
      * find

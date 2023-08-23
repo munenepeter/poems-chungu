@@ -88,7 +88,7 @@ class QueryBuilder {
     return $this->runQuery($sql, $table);
   }
 
-  public function selectAllWhere(string $table, $column, $value, $condition) {
+  public function selectAllWhere(string $table, $column, $value, $condition = "=") {
 
     $sql = "select * from {$table} where `{$column}` $condition \"$value\" ORDER BY `created_at` DESC;";
 
@@ -122,6 +122,8 @@ class QueryBuilder {
 
     return $this->runQuery($sql, $table);
   }
+
+
   public function update(string $table, $dataToUpdate, $where, $isValue) {
     $sql = "UPDATE {$table} SET $dataToUpdate WHERE `$where` = \"$isValue\"";
 

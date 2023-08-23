@@ -1,6 +1,5 @@
 <?php
 
-use Chungu\Models\Poem;
 use Chungu\Core\Mantle\Router;
 use Chungu\Core\Mantle\Request;
 
