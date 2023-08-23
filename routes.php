@@ -21,9 +21,14 @@ $router->post('admin/qoutes/create', 'QoutesController@create');
 
 //subscribers
 $router->post('subscribe', 'SubscribersController@create');
+//mail
+$router->get('mail', 'SubscribersController@viewMail');
 
 //api
 $router->get('api/poems', 'ApiController@allpoems');
+
+
+
 
 //logs
 $router->get(':system:/logs', 'SystemController@index');

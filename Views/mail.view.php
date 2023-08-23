@@ -13,11 +13,7 @@
         gap: 16px;
     }
 
-    .email-header a img {
-        width: auto;
-        height: 28px;
-    }
-
+    
     .email-nav {
         display: flex;
         align-items: center;
@@ -86,19 +82,24 @@
     .email-footer a:hover {
         text-decoration: underline;
     }
+
+    .text-japonica-400 {
+        color: #98b368;
+    }
+    .flex{
+        display: flex;
+        align-items: center;
+    }
 </style>
 
 <section class="email-section">
     <header class="email-header">
-        <a href="#">
-            <img src="https://merakiui.com/images/full-logo.svg" alt="">
+        <a href="/" class="flex items-center text-japonica-400">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 mr-3 hidden md:block">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="self-center md:text-2xl text-lg font-semibold whitespace-nowrap ">Chungu Poems</span>
         </a>
-        <nav class="email-nav">
-            <a href="#">Home</a>
-            <a href="#">Blog</a>
-            <a href="#">Tutorials</a>
-            <a href="#">Support</a>
-        </nav>
     </header>
     <main class="email-main">
         <h2>Hi Olivia,</h2>

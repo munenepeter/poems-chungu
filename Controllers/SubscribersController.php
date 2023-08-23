@@ -34,6 +34,10 @@ class SubscribersController extends Controller {
         return $this->json("Successfully subscribed to our mailing list", 200);
     }
 
+    public function viewMail() {
+
+        return view('mail');
+    }
     private function checkDisposableEmail($email) {
         $msg = "";
         $domain = substr(strrchr($email, "@"), 1);
