@@ -68,6 +68,22 @@ include_once 'sections/nav.view.php';
                                                                                                   </option>
                                                                                            </select>
                                                                                     </div>
+                                                                                    <div>
+                                                                                           <label for="title" class="block mb-2 text-sm font-medium text-asparagus-900 dark:text-white">Title</label>
+                                                                                           <input type="text" name="title" id="title" class="bg-asparagus-50 border border-asparagus-300 text-asparagus-900 text-sm rounded-lg focus:ring-asparagus-600 focus:border-asparagus-600 block w-full p-2.5 dark:bg-asparagus-700 dark:border-asparagus-600 dark:placeholder-asparagus-400 dark:text-white dark:focus:ring-asparagus-500 dark:focus:border-asparagus-500" placeholder="Type poem title" required="">
+                                                                                    </div>
+                                                                                    <div>
+                                                                                           <label for="category" class="block mb-2 text-sm font-medium text-asparagus-900 dark:text-white">category</label>
+                                                                                           <select id="category" name="category" class="bg-asparagus-50 border border-asparagus-300 text-asparagus-900 text-sm rounded-lg focus:ring-asparagus-500 focus:border-asparagus-500 block w-full p-2.5 dark:bg-asparagus-700 dark:border-asparagus-600 dark:placeholder-asparagus-400 dark:text-white dark:focus:ring-asparagus-500 dark:focus:border-asparagus-500">
+                                                                                                  <option selected="">
+                                                                                                         Select
+                                                                                                         category
+                                                                                                  </option>
+                                                                                                  <option value="munenepeter">
+                                                                                                         munenepeter
+                                                                                                  </option>
+                                                                                           </select>
+                                                                                    </div>
                                                                                     <div class="sm:col-span-2">
 
                                                                                            <label for="poem" class="block mb-2 text-sm font-medium text-asparagus-900 dark:text-white">Poem</label>
@@ -145,11 +161,26 @@ include_once 'sections/nav.view.php';
 </section>
 
 
-
+<script src="<?= asset('js/custom-ckeditor.js') ?>"></script>
 <script>
        ClassicEditor
-              .create(document.querySelector('#editor'))
-              .catch(error => {
-                     console.error(error);
-              });
+              .create(document.querySelector('#editor'), {
+                     // Editor configuration.
+              })
+              .then(editor => {
+                     window.editor = editor;
+              })
+              .catch(handleSampleError);
+
+       function handleSampleError(error) {
+              const issueUrl = 'https://github.com/ckeditor/ckeditor5/issues';
+
+              const message = [
+                     'Oops, something went wrong!',
+                     `Please, report the following error on ${ issueUrl } with the build id "n9f4z769im97-i57gmdhh3z7" and the error stack trace:`
+              ].join('\n');
+
+              console.error(message);
+              console.error(error);
+       }
 </script>
