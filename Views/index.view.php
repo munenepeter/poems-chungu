@@ -5,13 +5,12 @@
     <div class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-2">
         <div class="flex flex-col justify-between lg:flex-row px-5">
             <div class="mb-8 lg:max-w-lg lg:pr-5 lg:mb-0">
-                <h1 class="text-asparagus-100 font-extrabold md:text-6xl text-4xl">New poetry, every week</h1>
+                <h1 class="text-asparagus-100 font-extrabold md:text-6xl text-4xl">New beautiful and unique poetry, every week</h1>
+                <h1 class="hidden text-asparagus-100 font-extrabold md:text-6xl text-4xl">New poetry, every week</h1>
             </div>
             <div class="pb-5 lg:w-2/5">
-                <p class='pb-8 text-asparagus-50'>Sign up to get new poetry playlist in your inbox every week.You'll
-                    receive
-                    set
-                    of poems around a different theme, with a focus on contemporary poets. It's free, and you can
+                <p class='pb-8 text-asparagus-50'>Sign up to get new poetry playlist in your inbox every week. You'll
+                    receive set of poems around a different theme, with a focus on contemporary poets. It's free, and you can
                     unsubsribe anytime. Read more about us</p>
 
                 <form id="subscribe-form" method="POST" class='flex sm:flex-row md:p-0'>
@@ -34,13 +33,11 @@
             <article class="w-full max-w-2xl">
                 <a href="/poems/<?= $featured_poem->id ?>" class="block mb-2 text-3xl font-extrabold leading-tight text-japonica-900 lg:mb-6 lg:text-4xl hover:underline">
                     <?= ucwords($featured_poem->title) ?></a>
-
                 <a href="#" rel="author" class="text-sm font-bold text-japonica-900 uppercase">by
-                    <?= $featured_poem->author ?></a>
+                    <?= $featured_poem->author()->name; ?></a>
                 <div class="prose md:mt-4 mt-2 lead text-japonica-950">
                     <?= htmlspecialchars_decode($featured_poem->body) ?>
                 </div>
-
             </article>
         </div>
 
@@ -48,7 +45,6 @@
             <h1 class="mb-2 uppercase text-japonica-500">Latest Poems</h1>
             <?php $i = 1; ?>
             <?php foreach ($poems as $poem) : ?>
-
                 <article>
                     <div class="md:my-2 inline-flex items-center">
                         <div class="mr-3 grid grid-cols-1 justify-items-center bg-japonica-100 w-12 rounded-md">
@@ -59,10 +55,10 @@
                             <p class="text-sm font-light text-asparagus-500 dark:text-asparagus-400 italic">by
                                 <?= $poem->author()->name; ?>
                             </p>
-
                         </div>
                     </div>
-                </article><?php $i++; ?>
+                </article>
+            <?php $i++; ?>
             <?php endforeach ?>
 
         </div>
@@ -74,10 +70,8 @@
 <!-- Categories -->
 <section class="bg-asparagus-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
     <h1 class="mb-2 uppercase text-japonica-500">Most viewed categories</h1>
-
     <div class="grid md:grid-cols-4 grid-cols-2 gap-3">
         <?php foreach ($categories as $category) : ?>
-
             <div class="mx-auto mt-6 w-40  overflow-hidden">
                 <img class="md:h-56 h-48 w-full object-cover object-center" src="https://dummyimage.com/200x400/f2bbaf/799649&text=<?= $category->name; ?>" />
                 <div class="mt-2">
@@ -95,14 +89,11 @@
     <div class="md:grid md:grid-cols-6 md:gap-4 gap-2 mx-auto">
         <h1 class="lateral-txt mb-2 uppercase text-japonica-500">Latest Qoutes</h1>
         <div class="font-medium md:col-span-3 p-2 mb-2">
-
             <article class="w-full max-w-2xl">
-                <p class="md:mt-4 mt-2 lead"> It is like a magical river</p>
-                <a href="#" rel="author" class="font-semibold text-gray-900 italic">- munenepeter</a>
-
+                <p class="md:mt-4 mt-2 lead italic">"when you compliment others genuinely, you activate the good that was always with them and permit then to become great"</p>
+                <a href="#" rel="author" class="pt-2 font-semibold text-gray-900 ">- anonymous</a>
             </article>
         </div>
-
         <div class="md:ml-10 col-span-2 md:border-none border-t md:py-0 py-4">
         </div>
     </div>
