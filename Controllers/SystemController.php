@@ -28,7 +28,7 @@ class SystemController extends Controller
 
         array_pop($logs);
 
-        return view('log', [
+        return view('_log', [
             'logs' => array_reverse($logs),
         ]);
     }
