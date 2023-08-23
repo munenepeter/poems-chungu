@@ -15,7 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-    <?php if ($_SERVER['REQUEST_URI'] === '') : ?>
+    <?php if ($_SERVER['REQUEST_URI'] === '/') : ?>
+
+       
         <script defer src="<?= asset('js/subscribe.js') ?>"></script>
     <?php endif; ?>
     <link rel="stylesheet" href="<?= asset('css/output.css') ?>">
