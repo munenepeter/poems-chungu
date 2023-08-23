@@ -125,12 +125,6 @@ function wp_strip_all_tags($string, $remove_breaks = false) {
     return trim($string);
 }
 
-
-
- 
- 
-
-
 function slug($string) {
     return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
 }
@@ -225,24 +219,6 @@ function delete_file(string $path) {
 function class_basename($class) {
     $class = is_object($class) ? get_class($class) : $class;
     return basename(str_replace('\\', '/', $class));
-}
-function downloadFile($dir, $file) {
-
-    if (file_exists($file . "uuj")) {
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize($file));
-        flush(); // Flush system output buffer
-        readfile($dir . $file);
-        die();
-    } else {
-        http_response_code(404);
-        die();
-    }
 }
 
 
@@ -380,10 +356,6 @@ function get_errors() {
 }
 
 
-function format_meeting_date(string $dateString) {
-    $timestamp = strtotime($dateString);
-    return date("F jS, Y \a\\t g:i A", $timestamp);
-}
 
 
 

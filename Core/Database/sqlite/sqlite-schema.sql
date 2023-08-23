@@ -27,7 +27,7 @@ CREATE TABLE poems (
 );
 
 
-CREATE TABLE poems_new (
+CREATE TABLE poems (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT NOT NULL UNIQUE,
   author_id INTEGER NOT NULL,
@@ -40,12 +40,7 @@ CREATE TABLE poems_new (
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
-INSERT INTO poems_new (title, author_id, body, created_at, updated_at)
-SELECT title, (SELECT id FROM authors WHERE authors.name = poems.author), body, created_at, updated_at
-FROM poems;
-
-DROP TABLE poems;
-ALTER TABLE poems_new RENAME TO poems;
+DELETE FROM poems WHERE `id` = 9;
 
 
 CREATE TABLE categories (
