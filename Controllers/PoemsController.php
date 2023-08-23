@@ -3,6 +3,8 @@
 namespace Chungu\Controllers;
 
 use Chungu\Models\Poem;
+use Chungu\Models\Author;
+use Chungu\Models\Category;
 use Chungu\Controllers\Controller;
 
 class PoemsController extends Controller {
@@ -14,9 +16,13 @@ class PoemsController extends Controller {
     public function index() {
         $this->middleware('auth');
         $poems = Poem::all();
+        $categories = Category::all();
+        $authors = Author::all();
 
         return view('manage-poems', [
-            'poems' => $poems
+            'poems' => $poems,
+            'categories' => $categories,
+            'authors' => $authors
         ]);
     }
 
@@ -36,7 +42,8 @@ class PoemsController extends Controller {
 
         Poem::create([
             'title' => request('title'),
-            'author' => request('author'),
+            'author_id' => request('author'),
+            'category_id' => request('category'),
             'body' => request('body')
         ]);
 

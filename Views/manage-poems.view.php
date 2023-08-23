@@ -52,7 +52,7 @@ include_once 'sections/nav.view.php';
                                                                       <!-- Modal body -->
                                                                       <form action="/admin/poems/create" method="post">
                                                                              <div class="grid gap-4 mb-4 sm:grid-cols-2">
-                                                                                    <div>
+                                                                                    <div class="sm:col-span-2">
                                                                                            <label for="title" class="block mb-2 text-sm font-medium text-asparagus-900 dark:text-white">Title</label>
                                                                                            <input type="text" name="title" id="title" class="bg-asparagus-50 border border-asparagus-300 text-asparagus-900 text-sm rounded-lg focus:ring-asparagus-600 focus:border-asparagus-600 block w-full p-2.5 dark:bg-asparagus-700 dark:border-asparagus-600 dark:placeholder-asparagus-400 dark:text-white dark:focus:ring-asparagus-500 dark:focus:border-asparagus-500" placeholder="Type poem title" required="">
                                                                                     </div>
@@ -61,27 +61,28 @@ include_once 'sections/nav.view.php';
                                                                                            <select id="author" name="author" class="bg-asparagus-50 border border-asparagus-300 text-asparagus-900 text-sm rounded-lg focus:ring-asparagus-500 focus:border-asparagus-500 block w-full p-2.5 dark:bg-asparagus-700 dark:border-asparagus-600 dark:placeholder-asparagus-400 dark:text-white dark:focus:ring-asparagus-500 dark:focus:border-asparagus-500">
                                                                                                   <option selected="">
                                                                                                          Select
-                                                                                                         author
+                                                                                                         Author
                                                                                                   </option>
-                                                                                                  <option value="munenepeter">
-                                                                                                         munenepeter
-                                                                                                  </option>
+                                                                                                  <?php foreach ($authors as $author) : ?>
+                                                                                                         <option value="<?= $author->id ?>">
+                                                                                                                <?= ucfirst($author->name) ?>
+                                                                                                         </option>
+                                                                                                  <?php endforeach; ?>
                                                                                            </select>
                                                                                     </div>
-                                                                                    <div>
-                                                                                           <label for="title" class="block mb-2 text-sm font-medium text-asparagus-900 dark:text-white">Title</label>
-                                                                                           <input type="text" name="title" id="title" class="bg-asparagus-50 border border-asparagus-300 text-asparagus-900 text-sm rounded-lg focus:ring-asparagus-600 focus:border-asparagus-600 block w-full p-2.5 dark:bg-asparagus-700 dark:border-asparagus-600 dark:placeholder-asparagus-400 dark:text-white dark:focus:ring-asparagus-500 dark:focus:border-asparagus-500" placeholder="Type poem title" required="">
-                                                                                    </div>
+
                                                                                     <div>
                                                                                            <label for="category" class="block mb-2 text-sm font-medium text-asparagus-900 dark:text-white">category</label>
                                                                                            <select id="category" name="category" class="bg-asparagus-50 border border-asparagus-300 text-asparagus-900 text-sm rounded-lg focus:ring-asparagus-500 focus:border-asparagus-500 block w-full p-2.5 dark:bg-asparagus-700 dark:border-asparagus-600 dark:placeholder-asparagus-400 dark:text-white dark:focus:ring-asparagus-500 dark:focus:border-asparagus-500">
                                                                                                   <option selected="">
                                                                                                          Select
-                                                                                                         category
+                                                                                                         Category
                                                                                                   </option>
-                                                                                                  <option value="munenepeter">
-                                                                                                         munenepeter
-                                                                                                  </option>
+                                                                                                  <?php foreach ($categories as $category) : ?>
+                                                                                                         <option value="<?= $category->id ?>">
+                                                                                                                <?= ucfirst($category->name) ?>
+                                                                                                         </option>
+                                                                                                  <?php endforeach; ?>
                                                                                            </select>
                                                                                     </div>
                                                                                     <div class="sm:col-span-2">
