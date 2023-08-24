@@ -11,9 +11,12 @@ $router->get('poems', 'PoemsController@all');
 $router->get('poems/{id}', 'PoemsController@show');
 
 
-
+//poems
 $router->get('admin/poems', 'PoemsController@index');
 $router->post('admin/poems/create', 'PoemsController@create');
+$router->post('admin/poems/edit', 'PoemsController@edit');
+$router->post('admin/poems/publish', 'PoemsController@publish');
+$router->post('admin/poems/delete', 'PoemsController@delete');
 
 $router->get('admin/qoutes', 'QoutesController@index');
 $router->post('admin/qoutes/create', 'QoutesController@create');
@@ -34,6 +37,6 @@ $router->get('api/poems', 'ApiController@allpoems');
 $router->get(':system:/logs', 'SystemController@index');
 $router->post(':system:/logs/delete', 'SystemController@deleteLogs');
 //robots
-$router->get('robots.txt', function (){
-    return require __DIR__ ."/robots.txt";
+$router->get('robots.txt', function () {
+    return require __DIR__ . "/robots.txt";
 });

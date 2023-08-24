@@ -67,4 +67,14 @@ class PoemsController extends Controller {
             'poems' => $poems
         ]);
     }
+
+    public function edit() {
+        $this->json(request()->all());
+    }
+    public function publish() {
+        $this->json(request()->all());
+    }
+    public function delete() {
+        $this->json(request()->all());
+    }
 }
