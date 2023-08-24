@@ -6,7 +6,7 @@ include_once 'sections/nav.view.php'; ?>
        <article class="grid md:grid-cols-4 w-full mt-8 gap-2 bg-asparagus-50 ">
 
               <?php foreach ($poems as $poem) : ?>
-                     <div class="border-4 border-white border-l-asparagus-500 bg-white p-4 flex flex-col justify-between leading-normal">
+                     <div class="bg-clip-border border-4 border-white border-l-asparagus-500 bg-white p-4 flex flex-col justify-between leading-normal">
                             <div class="mb-4">
                                    <p class="text-sm text-gray-600 flex items-center">
                                           <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

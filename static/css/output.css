@@ -1316,6 +1316,10 @@ video {
   background-color: rgb(138 59 42 / var(--tw-bg-opacity));
 }
 
+.bg-clip-border {
+  background-clip: border-box;
+}
+
 .fill-current {
   fill: currentColor;
 }
