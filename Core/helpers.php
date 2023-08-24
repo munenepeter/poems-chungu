@@ -202,7 +202,22 @@ function plural($phrase, $value) {
     }
     return $phrase;
 }
+function truncate($text, $limit) {
+    //Set Up
+    $array = [];
+    $count = -1;
+    //Turning String into an Array
+    $split_text = explode(" ", $text);
+    //Loop for the length of words you want
+    while ($count < $limit - 1) {
+        $count++;
+        $array[] = $split_text[$count];
+    }
+    //Converting Array back into a String
+    $text = implode(" ", $array);
 
+    return $text . " ...";
+}
 /**
  * Delete a file
  */
