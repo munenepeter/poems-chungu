@@ -3,7 +3,7 @@ include_once 'sections/nav.view.php'; ?>
 <div class="w-full lg:max-w-full pt-8 md:mt-32 mt-8 px-4 py-4 lg:py-8">
 
 
-       <article class="grid md:grid-cols-4 grid-cols-1 w-full mt-8 gap-2">
+       <article class="grid md:grid-cols-4 w-full mt-8 gap-2">
 
               <?php foreach ($poems as $poem) : ?>
                      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
@@ -15,7 +15,7 @@ include_once 'sections/nav.view.php'; ?>
                                           <?= ($poem->status) ? "Published" : "Unpublished"; ?>
                                    </p>
                                    <div class="text-gray-900 font-bold text-xl mb-2"><?= $poem->title; ?></div>
-                                   <p class="text-gray-700 text-base"><?= wp_strip_all_tags(htmlspecialchars_decode($poem->body)) ?></p>
+                                   <p class="text-gray-700 text-base"><?= wp_strip_all_tags(str_replace("</p>", " ", htmlspecialchars_decode($poem->body))) ?></p>
                             </div>
 
                             <div class="text-sm">

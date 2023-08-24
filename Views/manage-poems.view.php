@@ -140,7 +140,7 @@ include_once 'sections/nav.view.php';
                                                                       </td>
                                                                       <td class="px-6 py-4 ">
                                                                              <p class="text-sm text-asparagus-900">
-                                                                                    <?= wp_strip_all_tags(htmlspecialchars_decode($poem->body)) ?>
+                                                                                    <?= wp_strip_all_tags(str_replace("</p>", " ", htmlspecialchars_decode($poem->body))) ?>
                                                                              </p>
                                                                       </td>
 
