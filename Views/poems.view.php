@@ -15,7 +15,7 @@ include_once 'sections/nav.view.php'; ?>
                                           <?= ($poem->status) ? "Published" : "Unpublished"; ?>
                                    </p>
                                    <div class="text-gray-900 font-bold text-xl mb-2"><?= $poem->title; ?></div>
-                                   <p class="text-gray-700 text-base"><?= truncate(wp_strip_all_tags(str_replace("</p>", " ", htmlspecialchars_decode($poem->body))), 150) ?></p>
+                                   <p class="text-gray-700 text-base"><?= truncate(format_poem($poem->body), 150) ?></p>
                             </div>
 
                             <div class="text-sm">
