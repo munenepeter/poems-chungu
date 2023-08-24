@@ -207,7 +207,7 @@ function truncate($text, $limit) {
 }
 
 function format_poem(string $poem) {
-    return wp_strip_all_tags(str_replace("</p>", " ", htmlspecialchars_decode($poem)));
+    return trim(wp_strip_all_tags(str_replace("</p>", " ", htmlspecialchars_decode($poem))));
 }
 /**
  * Delete a file
