@@ -186,7 +186,7 @@ include_once 'sections/nav.view.php';
                                                         </th>
 
                                                         <th scope="col" class="relative px-6 py-3">
-                                                               <span class="sr-only">Edit</span>
+                                                               <span class="sr-only">Actions</span>
                                                         </th>
                                                  </tr>
                                           </thead>
@@ -197,7 +197,18 @@ include_once 'sections/nav.view.php';
                                                         <?php foreach ($poems as $poem) : ?>
                                                                <tr>
                                                                       <td class="px-4 py-4 whitespace-nowrap">
-                                                                             <?= ($poem->status) ? "Published" : "Unpublished"; ?>
+                                                                             <?php if (!$poem->status) : ?>
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-red-500 w-6 h-6">
+                                                                                           <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                                    </svg>
+                                                                                    <?php else : ?>
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-green-500 w-6 h-6">
+                                                                                           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                                    </svg>
+
+                                                                             <?php endif ?>
+
+
                                                                       </td>
                                                                       <td class="px-4 py-4 whitespace-nowrap">
                                                                              <p> <?= $poem->title ?></p>
