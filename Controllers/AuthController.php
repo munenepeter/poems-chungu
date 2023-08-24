@@ -18,7 +18,7 @@ class AuthController extends Controller {
     public function login() {
         $this->validateLoginRequest();
 
-        if (!Auth::login($this->request()->form('email'), $this->request()->form('password'))) { 
+        if (!Auth::login($this->request()->form('email'), $this->request()->form('password'))) {
             return view('login', [
                 'errors' => Session::get('_msg_error')
             ]);
