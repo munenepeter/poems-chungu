@@ -9,26 +9,21 @@ use Chungu\Controllers\Controller;
 class AuthController extends Controller {
     public function index() {
         if (Session::get('loggedIn')) {
-
             return redirect('/dashboard');
         }
+
         return view('login');
     }
 
     public function login() {
         $this->validateLoginRequest();
 
-        Auth::login($this->request()->form('email'), $this->request()->form('password'));
-
-        if (Session::get('loggedIn')) {
-
-            return redirect('/dashboard');
-        } elseif (Session::get('_msg_error') || Session::get('_msg_error') !== '') {
-
+        if (!Auth::login($this->request()->form('email'), $this->request()->form('password'))) { 
             return view('login', [
                 'errors' => Session::get('_msg_error')
             ]);
         }
+        return redirect('/dashboard');
     }
 
     public function signout() {

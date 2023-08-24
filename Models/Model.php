@@ -55,13 +55,13 @@ class Model {
         //User::delete('id', 23]);
     }
     public static function all() {
-        //Returns all the records in the db for a certain  model/table
+    
 
         return App::get('database')->selectAll(static::tableName());
         //User::all();
     }
     public static function select($column, $value, $condition = "=") {
-        //Returns all the records in the db for a certain  model/table
+    
         return App::get('database')->selectAllWhere(static::tableName(), $column, $condition, $value);
         //User::select('id',89);
     }
@@ -80,28 +80,22 @@ class Model {
      * @return \Chungu\Models\Model;
      */
     public static function where($columns, $condition) {
-        //Returns all the records in the db for a certain  model/table
-
         return  App::get('database')->selectWhere(static::tableName(), $columns, $condition);
         //::where(['id', 'name','slug'], ['id', 90]); -> return id, name & slug where the id is 90
     }
     public static function query(string $sql) {
-        //Returns all the records in the db for a certain  model/table
-
+    
         return  App::get('database')->query($sql);
-        //::query(Select ,, form , ); 
+    
     }
     public static function count(array $condition) {
-        //Returns all the records in the db for a certain  model/table
+     
 
         return  App::get('database')->count(static::tableName(), $condition)[0]->count;
         //::query(Select ,, form , ); 
     }
     public static function findBy($column, $value) {
-        //Returns all the records in the db for a certain  model/table
-
         return  App::get('database')->selectAllWhere(static::tableName(), $column, $value);
-        //::query(Select ,, form , ); 
     }
     /**
      * find
