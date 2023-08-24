@@ -18,7 +18,7 @@
                             <input type="password" name="password" id="password" placeholder="••••••••" class="bg-asparagus-50 border border-asparagus-300 text-asparagus-800 rounded-lg
                                    focus:ring-asparagus-500 focus:border-asparagus-500 block w-full p-2.5 " required>
                      </div>
-
+                     <p class="<?= $errors ? '': 'hidden'?> text-red-500"><?= $errors ?></p>
                      <button type="submit" class="w-full text-white bg-asparagus-500 hover:bg-asparagus-400 focus:ring-4 focus:outline-none
                      focus:ring-asparagus-300 font-medium rounded-lg  px-5 py-2.5 text-center
                      dark:hover:bg-asparagus-800 dark:focus:ring-asparagus-800">Login
@@ -28,7 +28,7 @@
                                    account</a>
                      </div>
               </form>
-               
+
        </div>
 
 
