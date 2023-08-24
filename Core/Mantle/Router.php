@@ -69,7 +69,7 @@ class Router {
     }
 
     protected function abortWithError($message, $code) {
-        logger("Debug", $message);
+        logger("Debug", "Router: ".$message);
         http_response_code($code);
         view('_error', [
             'code' => $code,

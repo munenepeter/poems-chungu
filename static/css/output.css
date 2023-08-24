@@ -1316,6 +1316,11 @@ video {
   background-color: rgb(138 59 42 / var(--tw-bg-opacity));
 }
 
+.bg-asparagus-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(210 223 183 / var(--tw-bg-opacity));
+}
+
 .bg-clip-border {
   background-clip: border-box;
 }
@@ -1863,6 +1868,11 @@ video {
 .hover\:bg-yellow-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-asparagus-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 238 217 / var(--tw-bg-opacity));
 }
 
 .hover\:text-asparagus-100:hover {
